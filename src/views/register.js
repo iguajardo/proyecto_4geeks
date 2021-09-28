@@ -10,6 +10,9 @@ const Register = () => {
         email: ""
     })
 
+    const [isRegister, setIsRegister] = useState({ message: "", status: "" })
+
+
     const handleSubmit = (e) => {
         e.preventDefault()
         fetch("https://serenity-rest-api.herokuapp.com/api/register", {
@@ -20,7 +23,9 @@ const Register = () => {
             body: JSON.stringify(input)
         })
             .then((response) => response.json())
-            .then((data) =>  console.log(data) )
+            .then((data) => {
+                setIsRegister(data)
+            })
             .catch((error) => console.log(error))
     }
 
@@ -40,6 +45,15 @@ const Register = () => {
                     </div>
                     <div className="card-body">
                         <form onSubmit={handleSubmit} className="flex-column g-3" >
+                            {isRegister.status == "ok" ?
+                                <div className="alert alert-success" role="alert">
+                                    {isRegister.message}
+                                </div>
+                                : isRegister.status == "error" &&
+                                <div className="alert alert-danger" role="alert">
+                                    {isRegister.message}
+                                </div>
+                            }
                             <div className="col-md-12">
                                 <label htmlFor="inputUsername" className="form-label fw-bold">
                                     Username
