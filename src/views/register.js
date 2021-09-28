@@ -15,18 +15,35 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("https://serenity-rest-api.herokuapp.com/api/register", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(input)
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                setIsRegister(data)
+        let mensaje = ""
+        if (!validateUsername(input.username)){
+            mensaje += "El usuario no debe contener caracteres especiales"
+        }
+        if (!validatePassword(input.password)){
+            mensaje += "\nEl password debe contener 8 caracteres, incluir mayusc,minusc,numeros y caracteres especiales"
+        }
+        if(mensaje.length > 0){
+            setIsRegister({"message":mensaje,"status":"error"})
+        }else{
+
+            fetch("https://serenity-rest-api.herokuapp.com/api/register", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(input)
             })
-            .catch((error) => console.log(error))
+                .then((response) => response.json())
+                .then((data) => {
+                    setIsRegister(data)
+                    setInput({
+                        username: "",
+                        password: "",
+                        email: ""
+                    })
+                })
+                .catch((error) => console.log(error))   
+        }
     }
 
     const handleChange = ({ target }) => {
@@ -34,6 +51,17 @@ const Register = () => {
             ...input,
             [target.name]: target.value
         })
+        setIsRegister({"message":"","status":""})
+    }
+
+    const validatePassword = (password) =>{
+        let passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-./]).{8,}$/;
+        return passwordRegex.test(password)
+    }
+    
+    const validateUsername = (username) => {
+        let usernameRegex = /^\w{3,100}$/;
+        return usernameRegex.test(username)
     }
 
     return (
@@ -45,11 +73,11 @@ const Register = () => {
                     </div>
                     <div className="card-body">
                         <form onSubmit={handleSubmit} className="flex-column g-3" >
-                            {isRegister.status == "ok" ?
+                            {isRegister.status === "ok" ?
                                 <div className="alert alert-success" role="alert">
                                     {isRegister.message}
                                 </div>
-                                : isRegister.status == "error" &&
+                                : isRegister.status === "error" &&
                                 <div className="alert alert-danger" role="alert">
                                     {isRegister.message}
                                 </div>
@@ -58,17 +86,18 @@ const Register = () => {
                                 <label htmlFor="inputUsername" className="form-label fw-bold">
                                     Username
                                 </label>
-                                <input type="text" className="form-control" id="inputUsername" name="username" value={input.username} onChange={handleChange} />
+                                <input minLength="3" maxLength="100" required type="text" className="form-control" id="inputUsername" name="username" value={input.username} onChange={handleChange} />
                             </div>
                             <div className="col-sm-12 col-md-12 mt-2">
                                 <label htmlFor="email" className="form-label fw-bold">
                                     Email
                                 </label>
                                 <input
+                                    required
                                     type="text"
                                     className="form-control"
                                     id="email"
-                                    placeholder="example@"
+                                    placeholder="name@example.com"
                                     name="email"
                                     value={input.email}
                                     onChange={handleChange}
@@ -79,6 +108,7 @@ const Register = () => {
                                     Password
                                 </label>
                                 <input
+                                    required
                                     type="password"
                                     className="form-control"
                                     id="password"

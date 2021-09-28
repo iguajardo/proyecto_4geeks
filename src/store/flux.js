@@ -1,9 +1,34 @@
 const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
+            apiUrl: "https://serenity-rest-api.herokuapp.com/",
+            token: null
+            
         
         },
         actions: {
+            loginUser: async (username, password) => {
+                const store = getStore();
+                const met = {
+                    method: "POST",
+                    body: JSON.stringify({
+                        username,
+                        password
+                    }),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }
+                const response = await fetch(`${store.apiUrl}api/auth`, met);
+                const data = await response.json();
+                console.log(data)
+                if (data.access_token) {
+                    localStorage.setItem("userToken", data.access_token);
+                    setStore({ token: data.access_token });
+                }
+                console.log(response)
+                return response;
+            }
         
         }
     }
