@@ -21,12 +21,13 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
                 const response = await fetch(`${store.apiUrl}api/auth`, met);
                 const data = await response.json();
-                console.log(data)
+                
                 if (data.access_token) {
+                    
                     localStorage.setItem("userToken", data.access_token);
                     setStore({ token: data.access_token });
                 }
-                console.log(response)
+                
                 return response;
             }
         
