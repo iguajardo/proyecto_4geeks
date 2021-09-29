@@ -17,7 +17,7 @@ const injectContext = PassedComponent => {
         }));
 
         useEffect(() => {
-            
+            userLogged()
         }, [])
 
         return (

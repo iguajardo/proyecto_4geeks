@@ -1,5 +1,6 @@
 import React from 'react';
-import { useContext, useRef } from "react";
+import { useHistory } from 'react-router-dom';
+import { useContext, useRef} from "react";
 import { Context } from "../store/appContext";
 
 
@@ -9,7 +10,8 @@ const Login = () => {
     const { actions } = useContext(Context);
     const inputUsername = useRef();
     const inputPassword = useRef();
-
+    const history = useHistory();
+ 
     const validateUsername = (e) => {
         e.preventDefault();
         if (inputUsername.current.value.trim() === '') {
@@ -23,8 +25,12 @@ const Login = () => {
         e.preventDefault();
         try {
             let res = await actions.loginUser(inputUsername.current.value, inputPassword.current.value);
-            if (res.status === 401) {
+            if (res.status === 400) {
                 alert('Usuario/Contraseña no coinciden')
+            }else if(res.status === 200) { 
+                inputUsername.current.value = ""
+                inputPassword.current.value = ""
+                history.replace('/perfil')
             }
         } catch (error) {
             console.error(error);

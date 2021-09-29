@@ -26,7 +26,7 @@ const Register = () => {
             setIsRegister({"message":mensaje,"status":"error"})
         }else{
 
-            fetch("https://serenity-rest-api.herokuapp.com/api/register", {
+            fetch(`${process.env.REACT_APP_API_URL}/api/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
