@@ -6,7 +6,7 @@ const Calendario = () => {
     return (
         <>
             <div>
-                <div className="card text-dark bg-light m-3" style={{ maxWidth: "20rem" }}>
+                <div className="card text-dark bg-light m-3" >
                     <div className="card-header">Header</div>
                     <div className="card-body">
                         <h5 className="card-title">Titulo de Nota</h5>
@@ -25,4 +25,4 @@ const Calendario = () => {
 
 }
 
-export default Notas
+export default Calendario

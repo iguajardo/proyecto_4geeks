@@ -1,5 +1,6 @@
 import React from 'react';
 import Notas from '../components/notas'
+import Calendario from '../components/calendario'
 
 
 
@@ -61,7 +62,7 @@ const Perfil = () => {
                             role="tabpanel"
                             aria-labelledby="nav-profile-tab"
                         >
-                            ...
+                            <Calendario/>
                         </div>
                         <div
                             className="tab-pane fade"
