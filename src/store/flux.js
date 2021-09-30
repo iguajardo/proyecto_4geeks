@@ -45,6 +45,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     const data = await response.json();
                     localStorage.setItem("userToken", data.access_token);
                     setStore({ token: data.access_token });
+                    
                 }
             },
             getNotas: async () => {
