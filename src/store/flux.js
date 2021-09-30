@@ -3,7 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             apiUrl: `${process.env.REACT_APP_API_URL}`,
             token: null,
-            notas:[]
+            notas: []
         },
         actions: {
             loginUser: async (nombre_usuario, password) => {
@@ -38,36 +38,35 @@ const getState = ({ getStore, getActions, setStore }) => {
                     }
                 }
                 const response = await fetch(`${store.apiUrl}/api/tokencheck`, met);
-                console.log(response.status)
-                if (response.status !== 200 ){
-                    setStore({token: null})
-                }else{
+                if (response.status !== 200) {
+                    setStore({ token: null })
+                } else {
                     const data = await response.json();
                     localStorage.setItem("userToken", data.access_token);
                     setStore({ token: data.access_token });
-                    
+
                 }
             },
             getNotas: async () => {
                 const store = getStore();
                 const met = {
-                    method:'GET',
-                    headers:{
+                    method: 'GET',
+                    headers: {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${store.token}`
                     }
                 }
-                const response = await fetch (`${store.apiUrl}/api/profile`, met);
-                if (response.status !==200){
+                const response = await fetch(`${store.apiUrl}/api/profile`, met);
+                if (response.status !== 200) {
                     return false
-                }else{
+                } else {
                     const data = await response.json();
-                    setStore({notas: data.notas})
+                    setStore({ notas: data.notas })
                     return true
                 }
             },
-            
-            
+
+
         }
     }
 }
