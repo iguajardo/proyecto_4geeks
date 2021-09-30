@@ -15,7 +15,7 @@ const Notas = () => {
                             id="all-category"
                         >
                             <i className="icon-layers mr-1" />
-                            <span className="d-none d-md-block">All Notes</span>
+                            <span className="d-none d-md-block">Notas</span>
                         </a>
                     </li>
                     <li className="nav-item">
@@ -26,41 +26,21 @@ const Notas = () => {
                         >
                             {" "}
                             <i className="icon-briefcase mr-1" />
-                            <span className="d-none d-md-block">Business</span>
+                            <span className="d-none d-md-block">Feliz</span>
                         </a>
                     </li>
-                    <li className="nav-item">
-                        <a
-                            href="javascript:void(0)"
-                            className="nav-link rounded-pill note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2"
-                            id="note-social"
-                        >
-                            {" "}
-                            <i className="icon-share-alt mr-1" />
-                            <span className="d-none d-md-block">Social</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a
-                            href="javascript:void(0)"
-                            className="nav-link rounded-pill note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2"
-                            id="note-important"
-                        >
-                            {" "}
-                            <i className="icon-tag mr-1" />
-                            <span className="d-none d-md-block">Important</span>
-                        </a>
-                    </li>
-                    <li className="nav-item ml-auto">
-                        <a
-                            href="javascript:void(0)"
-                            className="nav-link btn-primary rounded-pill d-flex align-items-center px-3"
+                    <li className="nav-item ms-auto">
+                        <button
+                            type="button"
+                            className="btn btn-primary rounded-pill d-flex align-items-center px-3"
                             id="add-notes"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
                         >
                             {" "}
                             <i className="icon-note m-1" />
-                            <span className="d-none d-md-block font-14">Add Notes</span>
-                        </a>
+                            <span className="d-none d-md-block font-14">Crear nota</span>
+                        </button>
                     </li>
                 </ul>
                 <div className="tab-content bg-transparent">
@@ -139,81 +119,61 @@ const Notas = () => {
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 {/* Modal Add notes */}
                 <div
                     className="modal fade"
-                    id="addnotesmodal"
+                    id="exampleModal"
                     tabIndex={-1}
-                    role="dialog"
-                    aria-labelledby="addnotesmodalTitle"
-                    style={{ display: "none" }}
+                    aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                 >
-                    <div className="modal-dialog modal-dialog-centered" role="document">
+                    <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content border-0">
                             <div className="modal-header bg-info text-white">
-                                <h5 className="modal-title text-white">Add Notes</h5>
+                                <h5 className="modal-title" id="exampleModalLabel">
+                                    Nueva Nota
+                                </h5>
                                 <button
                                     type="button"
-                                    className="close text-white"
-                                    data-dismiss="modal"
+                                    className="btn-close"
+                                    data-bs-dismiss="modal"
                                     aria-label="Close"
-                                >
-                                    <span aria-hidden="true">×</span>
-                                </button>
+                                />
                             </div>
                             <div className="modal-body">
-                                <div className="notes-box">
-                                    <div className="notes-content">
-                                        <form action="javascript:void(0);" id="addnotesmodalTitle">
-                                            <div className="row">
-                                                <div className="col-md-12 mb-3">
-                                                    <div className="note-title">
-                                                        <label>Note Title</label>
-                                                        <input
-                                                            type="text"
-                                                            id="note-has-title"
-                                                            className="form-control"
-                                                            minLength={25}
-                                                            placeholder="Title"
-                                                        />
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-12">
-                                                    <div className="note-description">
-                                                        <label>Note Description</label>
-                                                        <textarea
-                                                            id="note-has-description"
-                                                            className="form-control"
-                                                            minLength={60}
-                                                            placeholder="Description"
-                                                            rows={3}
-                                                            defaultValue={""}
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
+                                <form id="id="addnotesmodalTitle>
+                                    <div className="mb-3">
+                                        <label htmlFor="recipient-name" className="col-form-label">
+                                            Titulo
+                                        </label>
+                                        <input type="text" className="form-control" id="recipient-name" />
                                     </div>
-                                </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="message-text" className="col-form-label">
+                                            Nota
+                                        </label>
+                                        <textarea
+                                            className="form-control"
+                                            id="message-text"
+                                            defaultValue={""}
+                                        />
+                                    </div>
+                                </form>
                             </div>
                             <div className="modal-footer">
+                                <button className="btn btn-danger" data-dismiss="modal">
+                                    Descartar
+                                </button>
                                 <button
                                     id="btn-n-save"
                                     className="float-left btn btn-success"
-                                    style={{ display: "none" }}
                                 >
-                                    Save
+                                    Guardar
                                 </button>
-                                <button className="btn btn-danger" data-dismiss="modal">
-                                    Discard
-                                </button>
-                                <button id="btn-n-add" className="btn btn-info" disabled="disabled">
-                                    Add
-                                </button>
+                                
                             </div>
                         </div>
                     </div>
