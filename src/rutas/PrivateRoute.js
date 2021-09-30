@@ -5,11 +5,16 @@ import { Route} from 'react-router-dom';
 
 
 export const PrivateRoute = ({ component: Component, ...rest }) => {
-    const { store: { token } } = useContext(Context)
+    //const { store: { token } } = useContext(Context)
+    const { store, actions, setStore } = useContext(Context);
+   const { token } = store;
+   
+   
+    console.log(store)
 
     return (
         <Route {...rest} component={
-            props => (token ? <Component {...props} /> : <Redirect to="/"/>)
+            props => (token !== null ? <Component {...props} /> : <Redirect to="/"/>)
         } />
     )
 }

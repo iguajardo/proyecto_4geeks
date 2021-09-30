@@ -20,6 +20,11 @@ const injectContext = PassedComponent => {
             state.actions.getNotas()
         }, [state.store.token])
 
+        useEffect(()=>{
+            let token=localStorage.getItem('userToken')
+            state.actions.userLogged(token)
+        },[])
+
         return (
             <Context.Provider value={state}>
                 <PassedComponent {...props} />

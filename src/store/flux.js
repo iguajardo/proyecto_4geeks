@@ -28,20 +28,22 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
                 return response;
             },
-            userLogged: async () => {
+            userLogged: async (token) => {
                 const store = getStore();
                 const met = {
                     method: 'POST',
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `Bearer ${store.token}`
+                        "Authorization": `Bearer ${token}`
                     }
                 }
                 const response = await fetch(`${store.apiUrl}/api/tokencheck`, met);
+                console.log(response.status)
                 if (response.status !== 200 ){
                     setStore({token: null})
                 }else{
                     const data = await response.json();
+                    localStorage.setItem("userToken", data.access_token);
                     setStore({ token: data.access_token });
                 }
             },
@@ -62,7 +64,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                     setStore({notas: data.notas})
                     return true
                 }
-            }
+            },
+            
+            
         }
     }
 }

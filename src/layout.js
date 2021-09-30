@@ -17,10 +17,10 @@ const Layout = () => {
         <BrowserRouter>
             <Navbar />
             <Switch>
-                <PrivateRoute exact path="/perfil" component={Perfil}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/register" component={Register} />
+                <PrivateRoute exact path="/perfil" component={Perfil}/>
                 <Route component={NotFound} />
             </Switch> 
             <Footer />
