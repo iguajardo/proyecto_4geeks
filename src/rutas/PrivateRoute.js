@@ -14,7 +14,7 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
 
     return (
         <Route {...rest} component={
-            props => (token !== null ? <Component {...props} /> : <Redirect to="/"/>)
+            props => (localStorage.getItem('userToken') !== null ? <Component {...props} /> : <Redirect to="/"/>)
         } />
     )
 }
