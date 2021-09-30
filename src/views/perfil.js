@@ -10,7 +10,7 @@ const Perfil = () => {
 
     return (
         <>
-            <div className=" container ">
+            <div className="container pt-5">
                 <div className=" d-flex justify-content-center flex-column align-items-center m-4">
                     <div className="imagen rounded-circle" style={{ background: "black", width: "100px", height: "100px" }}>
                     </div>

@@ -67,10 +67,36 @@ const getState = ({ getStore, getActions, setStore }) => {
                     return true
                 }
             },
+            postNota: async (titulo, contenido) =>{
+                const store = getStore();
+                const met = {
+                    method: 'POST',
+                    headers:{
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${store.token}`
+                    },
+                    body:{
+                        titulo,
+                        contenido
+                    }
+                }
+                const response = await fetch(`${store.apiUrl}/api/note`, met);
+                if(response.status == 200){
+                    store.notas.push({titulo,contenido});
+                    setStore({notas:store.notas});
+                    return true
+                }else {
+                    return false
+                }
+                
+            },
+
+
             Logout: () =>{
                 localStorage.removeItem('userToken');
-                setStore({token:null})
-            }
+                setStore({token:null, notas:[]})
+            },
+
             
         }
     }
