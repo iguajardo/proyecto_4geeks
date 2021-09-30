@@ -8,6 +8,7 @@ import Home from './views/home';
 import NotFound from './views/notFound';
 import Login from './views/login';
 import Perfil from './views/perfil';
+import { PrivateRoute } from './rutas/PrivateRoute';
 
 
 
@@ -16,7 +17,7 @@ const Layout = () => {
         <BrowserRouter>
             <Navbar />
             <Switch>
-                <Route exact path="/perfil" component={Perfil}/>
+                <PrivateRoute exact path="/perfil" component={Perfil}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/register" component={Register} />

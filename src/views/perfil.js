@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Notas from '../components/notas'
 import Calendario from '../components/calendario'
 
 
 
 const Perfil = () => {
+
+    
 
     return (
         <>

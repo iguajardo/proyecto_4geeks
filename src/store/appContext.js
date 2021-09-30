@@ -17,8 +17,8 @@ const injectContext = PassedComponent => {
         }));
 
         useEffect(() => {
-            
-        }, [])
+            state.actions.getNotas()
+        }, [state.store.token])
 
         return (
             <Context.Provider value={state}>

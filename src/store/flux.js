@@ -6,12 +6,12 @@ const getState = ({ getStore, getActions, setStore }) => {
             notas:[]
         },
         actions: {
-            loginUser: async (username, password) => {
+            loginUser: async (nombre_usuario, password) => {
                 const store = getStore();
                 const met = {
                     method: "POST",
                     body: JSON.stringify({
-                        username,
+                        nombre_usuario,
                         password
                     }),
                     headers: {
@@ -26,7 +26,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                     localStorage.setItem("userToken", data.access_token);
                     setStore({ token: data.access_token });
                 }
-
                 return response;
             },
             userLogged: async () => {
@@ -45,7 +44,24 @@ const getState = ({ getStore, getActions, setStore }) => {
                     const data = await response.json();
                     setStore({ token: data.access_token });
                 }
-                
+            },
+            getNotas: async () => {
+                const store = getStore();
+                const met = {
+                    method:'GET',
+                    headers:{
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${store.token}`
+                    }
+                }
+                const response = await fetch (`${store.apiUrl}/api/profile`, met);
+                if (response.status !==200){
+                    return false
+                }else{
+                    const data = await response.json();
+                    setStore({notas: data.notas})
+                    return true
+                }
             }
         }
     }

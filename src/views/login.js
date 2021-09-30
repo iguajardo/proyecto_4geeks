@@ -49,7 +49,7 @@ const Login = () => {
                         <form onSubmit={handleSubmit} className="flex-column g-3" >
                             <div className="col-md-12">
                                 <label htmlFor="inputUsername" className="form-label fw-bold">
-                                    Username
+                                    Nombre de Usuario
                                 </label>
                                 <input minLength="3" maxLength="100" required type="text" className="form-control" id="inputEmail" name="Email" ref={inputUsername} onChange={(e) => validateUsername(e)}/>
                             </div>

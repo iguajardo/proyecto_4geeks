@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 const Register = () => {
 
     const [input, setInput] = useState({
-        username: "",
+        nombre_usuario: "",
         password: "",
         email: ""
     })
@@ -16,7 +16,7 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         let mensaje = ""
-        if (!validateUsername(input.username)){
+        if (!validateUsername(input.nombre_usuario)){
             mensaje += "El usuario no debe contener caracteres especiales"
         }
         if (!validatePassword(input.password)){
@@ -37,7 +37,7 @@ const Register = () => {
                 .then((data) => {
                     setIsRegister(data)
                     setInput({
-                        username: "",
+                        nombre_usuario: "",
                         password: "",
                         email: ""
                     })
@@ -59,9 +59,9 @@ const Register = () => {
         return passwordRegex.test(password)
     }
     
-    const validateUsername = (username) => {
+    const validateUsername = (nombre_usuario) => {
         let usernameRegex = /^\w{3,100}$/;
-        return usernameRegex.test(username)
+        return usernameRegex.test(nombre_usuario)
     }
 
     return (
@@ -84,9 +84,9 @@ const Register = () => {
                             }
                             <div className="col-md-12">
                                 <label htmlFor="inputUsername" className="form-label fw-bold">
-                                    Username
+                                    Nombre de Usuario
                                 </label>
-                                <input minLength="3" maxLength="100" required type="text" className="form-control" id="inputUsername" name="username" value={input.username} onChange={handleChange} />
+                                <input minLength="3" maxLength="100" required type="text" className="form-control" id="inputUsername" name="nombre_usuario" value={input.nombre_usuario} onChange={handleChange} />
                             </div>
                             <div className="col-sm-12 col-md-12 mt-2">
                                 <label htmlFor="email" className="form-label fw-bold">

@@ -1,9 +1,13 @@
-import React from 'react';
+import React,{ useContext, useState } from 'react';
+import { Context } from '../store/appContext';
 import '../styles/card.css'
+import { FaStar, FaTrash } from 'react-icons/fa';
 
 
 const Notas = () => {
-    const { notas } = store
+    const { store, actions, setStore } = useContext(Context);
+   const { notas } = store;
+    console.log("notas", store.notas)
 
     return (
         <>
@@ -48,14 +52,14 @@ const Notas = () => {
                 <div className="tab-content bg-transparent">
                     <div id="note-full-container" className="note-has-grid row">
                         {
-                            notas === [] ? (
-                                <div className="spinner-grow text-secondary" role="status">
-                                    <span className="visually-hidden">Loading...</span>
+                            notas.length === 0 ? (
+                                <div >
+                                    <span>Sin Notas</span>
                                 </div>
                             ) :
                                 !!notas &&
                                 notas.map((notas, index) => {
-                                    const { titulo, nota } = notas;
+                                    const { titulo, contenido, categoria, fecha } = notas;
                                     return (
                                         <div className="col-md-4 single-note-item all-category" key={index} >
                                             <div className="card card-body">
@@ -67,21 +71,21 @@ const Notas = () => {
                                                     {titulo}
                                                     <i className="point fa fa-circle ml-1 font-10" />
                                                 </h5>
-                                                <p className="note-date font-12 text-muted">11 March 2009</p>
+                                                <p className="note-date font-12 text-muted">{fecha}</p>
                                                 <div className="note-content">
                                                     <p
                                                         className="note-inner-content text-muted"
                                                         data-notecontent="Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis."
                                                     >
-                                                        {nota}
+                                                        {contenido}
                                                     </p>
                                                 </div>
                                                 <div className="d-flex align-items-center">
                                                     <span className="mr-1">
-                                                        <i className="fa fa-star favourite-note" />
+                                                        <FaStar />
                                                     </span>
                                                     <span className="mr-1">
-                                                        <i className="fa fa-trash remove-note" />
+                                                        <FaTrash />
                                                     </span>
                                                 </div>
                                             </div>
@@ -113,7 +117,7 @@ const Notas = () => {
                                 />
                             </div>
                             <div className="modal-body">
-                                <form id="id=" addnotesmodalTitle>
+                                <form id="addnotesmodalTitle">
                                     <div className="mb-3">
                                         <label htmlFor="recipient-name" className="col-form-label">
                                             Titulo
@@ -149,26 +153,10 @@ const Notas = () => {
                 </div>
 
             </div>
-
         </>
 
-
     )
-
 }
 
 export default Notas
 
-{/*   
-    <div>
-    <div className="card text-dark bg-light m-3" >
-        <div className="card-header">Header</div>
-        <div className="card-body">
-            <h5 className="card-title">Titulo de Nota</h5>
-            <p className="card-text">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </p>
-            <textarea contenteditable="true" ></textarea>
-        </div>
-    </div>
-</div> */}
