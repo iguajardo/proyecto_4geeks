@@ -3,7 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             apiUrl: `${process.env.REACT_APP_API_URL}`,
             token: null,
-            notas:[]
+            notas:[],
+            user_img:""
         },
         actions: {
             loginUser: async (nombre_usuario, password) => {
@@ -66,7 +67,10 @@ const getState = ({ getStore, getActions, setStore }) => {
                     return true
                 }
             },
-            
+            Logout: () =>{
+                localStorage.removeItem('userToken');
+                setStore({token:null})
+            }
             
         }
     }
