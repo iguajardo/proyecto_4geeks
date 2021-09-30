@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             apiUrl: `${process.env.REACT_APP_API_URL}`,
             token: null,
+            notas:[]
         },
         actions: {
             loginUser: async (username, password) => {

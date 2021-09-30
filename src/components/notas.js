@@ -3,14 +3,16 @@ import '../styles/card.css'
 
 
 const Notas = () => {
+    const { notas } = store
 
     return (
         <>
             <div className="page-content container note-has-grid">
+
                 <ul className="nav nav-pills p-3 bg-white mb-3 rounded-pill align-items-center">
                     <li className="nav-item">
                         <a
-                            href="javascript:void(0)"
+                            href="#"
                             className="nav-link rounded-pill note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2 active"
                             id="all-category"
                         >
@@ -20,7 +22,7 @@ const Notas = () => {
                     </li>
                     <li className="nav-item">
                         <a
-                            href="javascript:void(0)"
+                            href="#"
                             className="nav-link rounded-pill note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2"
                             id="note-business"
                         >
@@ -45,81 +47,48 @@ const Notas = () => {
                 </ul>
                 <div className="tab-content bg-transparent">
                     <div id="note-full-container" className="note-has-grid row">
-                        <div className="col-md-4 single-note-item all-category" style={{}}>
-                            <div className="card card-body">
-                                <span className="side-stick" />
-                                <h5
-                                    className="note-title text-truncate w-75 mb-0"
-                                    data-noteheading="Book a Ticket for Movie"
-                                >
-                                    Book a Ticket for Movie{" "}
-                                    <i className="point fa fa-circle ml-1 font-10" />
-                                </h5>
-                                <p className="note-date font-12 text-muted">11 March 2009</p>
-                                <div className="note-content">
-                                    <p
-                                        className="note-inner-content text-muted"
-                                        data-notecontent="Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis."
-                                    >
-                                        Blandit tempus porttitor aasfs. Integer posuere erat a ante
-                                        venenatis.
-                                    </p>
+                        {
+                            notas === [] ? (
+                                <div className="spinner-grow text-secondary" role="status">
+                                    <span className="visually-hidden">Loading...</span>
                                 </div>
-                                <div className="d-flex align-items-center">
-                                    <span className="mr-1">
-                                        <i className="fa fa-star favourite-note" />
-                                    </span>
-                                    <span className="mr-1">
-                                        <i className="fa fa-trash remove-note" />
-                                    </span>
-                                    <div className="ml-auto">
-                                        <div className="category-selector btn-group">
-                                            <a
-                                                className="nav-link dropdown-toggle category-dropdown label-group p-0"
-                                                data-toggle="dropdown"
-                                                href="#"
-                                                role="button"
-                                                aria-haspopup="true"
-                                                aria-expanded="true"
-                                            >
-                                                <div className="category">
-                                                    <div className="category-business" />
-                                                    <div className="category-social" />
-                                                    <div className="category-important" />
-                                                    <span className="more-options text-dark">
-                                                        <i className="icon-options-vertical" />
+                            ) :
+                                !!notas &&
+                                notas.map((notas, index) => {
+                                    const { titulo, nota } = notas;
+                                    return (
+                                        <div className="col-md-4 single-note-item all-category" key={index} >
+                                            <div className="card card-body">
+                                                <span className="side-stick" />
+                                                <h5
+                                                    className="note-title text-truncate w-75 mb-0"
+                                                    data-noteheading="Book a Ticket for Movie"
+                                                >
+                                                    {titulo}
+                                                    <i className="point fa fa-circle ml-1 font-10" />
+                                                </h5>
+                                                <p className="note-date font-12 text-muted">11 March 2009</p>
+                                                <div className="note-content">
+                                                    <p
+                                                        className="note-inner-content text-muted"
+                                                        data-notecontent="Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis."
+                                                    >
+                                                        {nota}
+                                                    </p>
+                                                </div>
+                                                <div className="d-flex align-items-center">
+                                                    <span className="mr-1">
+                                                        <i className="fa fa-star favourite-note" />
+                                                    </span>
+                                                    <span className="mr-1">
+                                                        <i className="fa fa-trash remove-note" />
                                                     </span>
                                                 </div>
-                                            </a>
-                                            <div className="dropdown-menu dropdown-menu-right category-menu">
-                                                <a
-                                                    className="note-business badge-group-item badge-business dropdown-item position-relative category-business text-success"
-                                                    href="javascript:void(0);"
-                                                >
-                                                    <i className="mdi mdi-checkbox-blank-circle-outline mr-1" />
-                                                    Business
-                                                </a>
-                                                <a
-                                                    className="note-social badge-group-item badge-social dropdown-item position-relative category-social text-info"
-                                                    href="javascript:void(0);"
-                                                >
-                                                    <i className="mdi mdi-checkbox-blank-circle-outline mr-1" />{" "}
-                                                    Social
-                                                </a>
-                                                <a
-                                                    className="note-important badge-group-item badge-important dropdown-item position-relative category-important text-danger"
-                                                    href="javascript:void(0);"
-                                                >
-                                                    <i className="mdi mdi-checkbox-blank-circle-outline mr-1" />{" "}
-                                                    Important
-                                                </a>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                                    )
+                                })
+                        }
                     </div>
                 </div>
                 {/* Modal Add notes */}
@@ -144,7 +113,7 @@ const Notas = () => {
                                 />
                             </div>
                             <div className="modal-body">
-                                <form id="id="addnotesmodalTitle>
+                                <form id="id=" addnotesmodalTitle>
                                     <div className="mb-3">
                                         <label htmlFor="recipient-name" className="col-form-label">
                                             Titulo
@@ -173,11 +142,12 @@ const Notas = () => {
                                 >
                                     Guardar
                                 </button>
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </>
