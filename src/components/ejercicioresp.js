@@ -7,10 +7,13 @@ import cycle from '../js/beatheanim'
 export const EjercicioResp =  () => {
 
     useEffect(()=>{
-         cycle();
-    setInterval(() => {
-      cycle();
+        cycle();
+        const ciclo = setInterval(() => {
+        cycle();
     }, 17000);
+    return ()=>{
+        clearInterval(ciclo)
+    }
     },[])
    
     
