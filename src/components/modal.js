@@ -3,7 +3,8 @@ import { Context } from '../store/appContext';
 
 
 const Modal = () => {
-
+    const { store, actions, setStore } = useContext(Context);
+    const { postNota } = actions;
     return (
 
         <div
@@ -53,6 +54,7 @@ const Modal = () => {
                         <button
                             id="btn-n-save"
                             className="float-left btn btn-success"
+                            onClick={postNota}
                         >
                             Guardar
                         </button>
