@@ -84,7 +84,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 const response = await fetch(`${store.apiUrl}/api/note`, met);
                 if(response.status == 200){
                     store.notas.push({titulo,contenido});
-                    setStore({notas:store.notas});
+                    getActions().getNotas()
                     return true
                 }else {
                     return false

@@ -20,6 +20,9 @@ const Modal = () => {
             alert("Debe ingresar un contenido")
             return;
         }
+        postNota(note.titulo, note.contenido)
+        setNote({titulo:"",contenido:""})
+        
     }
 
     const handleChange = ({ target }) => {
@@ -71,20 +74,18 @@ const Modal = () => {
                                     onChange={handleChange}
                                 />
                             </div>
+                            <button className="btn btn-danger" data-dismiss="modal">
+                                Descartar
+                            </button>
+                            <button
+                                id="btn-n-save"
+                                data-bs-dismiss="modal"
+                                className="float-left btn btn-success"
+                                type="submit"
+                            >
+                                Guardar
+                            </button>
                         </form>
-                    </div>
-                    <div className="modal-footer">
-                        <button className="btn btn-danger" data-dismiss="modal">
-                            Descartar
-                        </button>
-                        <button
-                            id="btn-n-save"
-                            className="float-left btn btn-success"
-                            onClick={postNota(note.titulo, note.contenido)}
-                        >
-                            Guardar
-                        </button>
-
                     </div>
                 </div>
             </div>
