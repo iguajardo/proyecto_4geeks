@@ -1,13 +1,12 @@
-import React,{ useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
 import '../styles/card.css'
 import { FaStar, FaTrash } from 'react-icons/fa';
 
 
 const Notas = () => {
-    const { store, actions, setStore } = useContext(Context);
-   const { notas } = store;
-    console.log("notas", store.notas)
+    const { store } = useContext(Context);
+    const { notas } = store;
 
     return (
         <>

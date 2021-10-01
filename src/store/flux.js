@@ -3,7 +3,13 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             apiUrl: `${process.env.REACT_APP_API_URL}`,
             token: null,
-            notas: []
+            notas: [],
+            calendar: {},
+            categorias: {
+                "enojo": "#FF9AA2",
+                "ansiedad": "#FFDAC1",
+                "calma": "#C7CEEA"
+            }
         },
         actions: {
             loginUser: async (nombre_usuario, password) => {
@@ -65,8 +71,15 @@ const getState = ({ getStore, getActions, setStore }) => {
                     return true
                 }
             },
-
-
+            changeCalendar: (newEntry) => {
+                const store = getStore();
+                setStore({
+                    calendar: {
+                        ...store.calendar,
+                        ...newEntry
+                    }
+                })
+            }
         }
     }
 }

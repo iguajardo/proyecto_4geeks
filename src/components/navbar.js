@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
-import { Context } from '../store/appContext';
-import { Link, withRouter } from 'react-router-dom';
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 
 const Navbar = () => {
-    
+
     return (
         <>
             <div>
