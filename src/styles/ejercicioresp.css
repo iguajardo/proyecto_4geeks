@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+.container_ejercicio {
+  height: 500px;
+  width: 500px;
+  background-color: rebeccapurple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container_ejercicio .outer-circle {
+  height: 350px;
+  width: 350px;
+  border-radius: 100%;
+  position: relative;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container_ejercicio .outer-circle #rotating-circle {
+  height: 175px;
+  width: 1px;
+  position: absolute;
+  top: 0;
+  transform-origin: bottom;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.container_ejercicio .outer-circle #rotating-circle:after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  top: -10px;
+  left: -10px;
+  border-radius: 100%;
+}
+.container_ejercicio .outer-circle #inner-circle {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 5s, height 5s;
+}
+.container_ejercicio .outer-circle #inner-circle.breathe-in {
+  transition: width 5s, height 5s, transition-timing-function ease-out;
+  height: 300px;
+  width: 300px;
+}
+.container_ejercicio .outer-circle #inner-circle.breathe-out {
+  transition: width 5s, height 5s, transition-timing-function ease-out;
+  height: 150px;
+  width: 150px;
+}
+.container_ejercicio .outer-circle #inner-circle.hold-it {
+  height: 300px;
+  width: 300px;
+}
+.container_ejercicio .outer-circle #inner-circle #message {
+  font-family: "Open Sans", sans-serif;
+  font-size: 25px;
+  color: rebeccapurple;
+}
+.container_ejercicio .outer-circle:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  border-radius: 100%;
+}
+
+@keyframes rotate-cycle-1 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes rotate-cycle-2 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes rotate-cycle-3 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
