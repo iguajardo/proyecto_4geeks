@@ -5,6 +5,30 @@ import { Context } from '../store/appContext';
 const Modal = () => {
     const { store, actions, setStore } = useContext(Context);
     const { postNota } = actions;
+    const [note, setNote] = useState({
+        titulo: "",
+        contenido: ""
+    })
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        if (note.titulo.trim() === '') {
+            alert("Debe ingresar un titulo")
+            return;
+        }
+        if (note.contenido.trim() === '') {
+            alert("Debe ingresar un contenido")
+            return;
+        }
+    }
+
+    const handleChange = ({ target }) => {
+        setNote({
+            ...note,
+            [target.name]: target.value
+        })
+    }
+
     return (
 
         <div
@@ -28,21 +52,23 @@ const Modal = () => {
                         />
                     </div>
                     <div className="modal-body">
-                        <form id="addnotesmodalTitle">
+                        <form id="addnotesmodalTitle" onSubmit={handleSubmit}>
                             <div className="mb-3">
                                 <label htmlFor="recipient-name" className="col-form-label">
                                     Titulo
                                 </label>
-                                <input type="text" className="form-control" id="recipient-name" />
+                                <input type="text" className="form-control" id="titulo" name="titulo" value={note.titulo} onChange={handleChange} />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="message-text" className="col-form-label">
+                                <label htmlFor="text" className="col-form-label" >
                                     Nota
                                 </label>
                                 <textarea
                                     className="form-control"
                                     id="message-text"
-                                    defaultValue={""}
+                                    name="contenido"
+                                    value={note.contenido}
+                                    onChange={handleChange}
                                 />
                             </div>
                         </form>
@@ -54,7 +80,7 @@ const Modal = () => {
                         <button
                             id="btn-n-save"
                             className="float-left btn btn-success"
-                            onClick={postNota}
+                            onClick={postNota(note.titulo, note.contenido)}
                         >
                             Guardar
                         </button>
@@ -65,6 +91,7 @@ const Modal = () => {
         </div>
     )
 }
+
 
 export default Modal
 

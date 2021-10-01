@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
             apiUrl: `${process.env.REACT_APP_API_URL}`,
             token: null,
             notas:[],
-            user_img:""
+            user_img:"",
+            
         },
         actions: {
             loginUser: async (nombre_usuario, password) => {
@@ -75,10 +76,10 @@ const getState = ({ getStore, getActions, setStore }) => {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${store.token}`
                     },
-                    body:{
+                    body:JSON.stringify({
                         titulo,
                         contenido
-                    }
+                    })
                 }
                 const response = await fetch(`${store.apiUrl}/api/note`, met);
                 if(response.status == 200){
