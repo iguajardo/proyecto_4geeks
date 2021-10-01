@@ -1,4 +1,4 @@
-import React,{ useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Context } from '../store/appContext';
 import '../styles/card.css'
 import { FaStar, FaTrash } from 'react-icons/fa';
@@ -8,8 +8,9 @@ import Modal from './modal'
 
 const Notas = () => {
     const { store, actions, setStore } = useContext(Context);
-   const { notas } = store;
+    const { notas } = store;
     console.log("notas", store.notas)
+    const [readyToDelete, setReadyToDelete] = useState(true);
 
     return (
         <>
@@ -83,12 +84,15 @@ const Notas = () => {
                                                     </p>
                                                 </div>
                                                 <div className="d-flex align-items-center">
-                                                    <span className="mr-1">
-                                                        <FaStar />
-                                                    </span>
-                                                    <span className="mr-1">
-                                                        <FaTrash />
-                                                    </span>
+                                                    <button className="mr-1" onClick={(e) => {
+                                                        e.target.disabled = true
+                                                        console.log(e)
+                                                        actions.borrarNota(notas.id)
+
+                                                    }
+                                                    } style={{ cursor: "pointer" }}>
+                                                        <FaTrash style={{ color: "#FF9AA2" }} />
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -97,7 +101,7 @@ const Notas = () => {
                         }
                     </div>
                 </div>
-                    <Modal/>
+                <Modal />
             </div>
         </>
 

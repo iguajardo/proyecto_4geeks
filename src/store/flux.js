@@ -5,6 +5,16 @@ const getState = ({ getStore, getActions, setStore }) => {
             token: null,
             notas:[],
             user_img:"",
+            categorias: {
+                "Enojo": "#FF9AA2",
+                "Ansiedad": "#653299",
+                "Tristeza": "#346ce7",
+                "Felicidad": "#fff27c",
+                "Productividad": "#fdb562",
+                "Molestia": "#d2fd8d",
+                "Cansancio": "#bebebe",
+                "Indiferencia": "#eca5ec"
+              }
             
         },
         actions: {
@@ -91,8 +101,24 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
                 
             },
-
-
+            borrarNota: async (id) => {
+                const store = getStore();
+                const met = {
+                    method: 'DELETE',
+                    headers:{
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${store.token}`
+                    }
+                }
+                const response = await fetch(`${store.apiUrl}/api/note/${id}`,met);
+                if (response.status !==200){
+                    return false
+                }else{
+                    const data = await response.json();
+                    setStore({notas: data.notas})
+                    return true
+                }
+            },
             Logout: () =>{
                 localStorage.removeItem('userToken');
                 setStore({token:null, notas:[]})

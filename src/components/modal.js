@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Context } from '../store/appContext';
+import '../styles/modal.css'
 
 
 const Modal = () => {
@@ -7,8 +8,10 @@ const Modal = () => {
     const { postNota } = actions;
     const [note, setNote] = useState({
         titulo: "",
-        contenido: ""
+        contenido: "",
+        categoria: ""
     })
+
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -21,8 +24,8 @@ const Modal = () => {
             return;
         }
         postNota(note.titulo, note.contenido)
-        setNote({titulo:"",contenido:""})
-        
+        setNote({ titulo: "", contenido: "" })
+
     }
 
     const handleChange = ({ target }) => {
@@ -73,6 +76,30 @@ const Modal = () => {
                                     value={note.contenido}
                                     onChange={handleChange}
                                 />
+                            </div>
+                            <div className="form-check mb-3">
+                                
+                                {
+                                    Object.keys(store.categorias).map((color) => {
+                                        return (
+                                            <div  key={color}>
+                                                <input
+                                                    className="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioDefault"
+                                                    id="flexRadioDefault1"
+                                                    value={color}
+                                                    style={{background: store.categorias[color]}}
+                                                />
+                                                <label className="form-check-label" htmlFor="flexRadioDefault1">
+                                                    {color}
+                                                </label>
+                                            </div>
+
+                                            
+                                        )
+                                    })
+                                }
                             </div>
                             <button className="btn btn-danger" data-dismiss="modal">
                                 Descartar
