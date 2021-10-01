@@ -74,11 +74,11 @@ const getState = ({ getStore, getActions, setStore }) => {
                     return false
                 }else{
                     const data = await response.json();
-                    setStore({notas: data.notas})
+                    setStore({notas: data.perfil.notas})
                     return true
                 }
             },
-            postNota: async (titulo, contenido) =>{
+            postNota: async (titulo, contenido, categoria) =>{
                 const store = getStore();
                 const met = {
                     method: 'POST',
@@ -88,12 +88,13 @@ const getState = ({ getStore, getActions, setStore }) => {
                     },
                     body:JSON.stringify({
                         titulo,
-                        contenido
+                        contenido,
+                        categoria
                     })
                 }
                 const response = await fetch(`${store.apiUrl}/api/note`, met);
                 if(response.status == 200){
-                    store.notas.push({titulo,contenido});
+                    store.notas.push({titulo,contenido,categoria});
                     getActions().getNotas()
                     return true
                 }else {
@@ -115,7 +116,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     return false
                 }else{
                     const data = await response.json();
-                    setStore({notas: data.notas})
+                    setStore({notas: data.perfil.notas})
                     return true
                 }
             },

@@ -8,8 +8,8 @@ import Modal from './modal'
 
 const Notas = () => {
     const { store, actions, setStore } = useContext(Context);
-    const { notas } = store;
-    console.log("notas", store.notas)
+    const { notas, categorias } = store;
+    
     const [readyToDelete, setReadyToDelete] = useState(true);
 
     return (
@@ -63,18 +63,19 @@ const Notas = () => {
                                 !!notas &&
                                 notas.map((notas, index) => {
                                     const { titulo, contenido, categoria, fecha } = notas;
+                                    const  newfecha = new Date(fecha)
                                     return (
                                         <div className="col-md-4 single-note-item all-category" key={index} >
                                             <div className="card card-body">
-                                                <span className="side-stick" />
+                                                <span className="side-stick" style={{background: store.categorias[categoria]}} />
                                                 <h5
                                                     className="note-title text-truncate w-75 mb-0"
                                                     data-noteheading="Book a Ticket for Movie"
                                                 >
                                                     {titulo}
-                                                    <i className="point fa fa-circle ml-1 font-10" />
+                                                    <i className="point fa fa-circle ms-1 fs-6" style={{color: categorias[categoria]}} />
                                                 </h5>
-                                                <p className="note-date font-12 text-muted">{fecha}</p>
+                                                <p className="note-date text-muted">{newfecha.toLocaleDateString()}</p>
                                                 <div className="note-content">
                                                     <p
                                                         className="note-inner-content text-muted"

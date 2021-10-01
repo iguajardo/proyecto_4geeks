@@ -23,8 +23,8 @@ const Modal = () => {
             alert("Debe ingresar un contenido")
             return;
         }
-        postNota(note.titulo, note.contenido)
-        setNote({ titulo: "", contenido: "" })
+        postNota(note.titulo, note.contenido, note.categoria)
+        setNote({ titulo: "", contenido: "",categoria:"" })
 
     }
 
@@ -86,12 +86,13 @@ const Modal = () => {
                                                 <input
                                                     className="form-check-input"
                                                     type="radio"
-                                                    name="flexRadioDefault"
+                                                    name="categoria"
                                                     id="flexRadioDefault1"
                                                     value={color}
                                                     style={{background: store.categorias[color]}}
+                                                    onChange={handleChange}
                                                 />
-                                                <label className="form-check-label" htmlFor="flexRadioDefault1">
+                                                <label className="form-check-label" htmlFor="categoria">
                                                     {color}
                                                 </label>
                                             </div>
