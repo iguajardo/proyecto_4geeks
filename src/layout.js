@@ -9,6 +9,7 @@ import NotFound from './views/notFound';
 import Login from './views/login';
 import Perfil from './views/perfil';
 import { PrivateRoute } from './rutas/PrivateRoute';
+import { ejercicioRespiracion } from './views/ejercicioRespiracion';
 
 
 
@@ -18,6 +19,7 @@ const Layout = () => {
             <Navbar />
             <Switch>
                 <Route exact path="/login" component={Login}/>
+                <Route exact path="/ejercicio-respiracion" component={ejercicioRespiracion}/>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/register" component={Register} />
                 <PrivateRoute exact path="/perfil" component={Perfil}/>

@@ -34,11 +34,14 @@ const Navbar = () => {
                                     Home
                                 </NavLink>
                             </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link active" aria-current="page" to="/ejercicio-respiracion">
+                                    Ejercicio
+                                </NavLink>
+                            </li>
                         </ul>
-
                         {
                             token == null ?(
-                            
                             <div className="btn-group">
                             <button type="button" className="btn btn-light">
                                 <NavLink className="btn_perfil nav-link" to="/">

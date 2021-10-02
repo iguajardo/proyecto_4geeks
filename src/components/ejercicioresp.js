@@ -10,7 +10,7 @@ export const EjercicioResp =  () => {
         cycle();
         const ciclo = setInterval(() => {
         cycle();
-    }, 17000);
+    }, 19700);
     return ()=>{
         clearInterval(ciclo)
     }
