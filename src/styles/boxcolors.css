@@ -1,0 +1,19 @@
+.box-colors {
+    border-radius: 5px;
+    width: 150px;
+    height: auto;
+    background-color: rgb(223, 211, 198);
+    padding: 10px;
+}
+
+input[type="radio"]:checked + label{
+    position: relative;
+}
+
+input[type="radio"]:checked + label::after {
+    content:"✔";
+    z-index: 99;
+    color:green;
+    position: absolute;
+    right: -25px;
+}

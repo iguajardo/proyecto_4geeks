@@ -6,9 +6,14 @@ const getState = ({ getStore, getActions, setStore }) => {
             notas: [],
             calendar: {},
             categorias: {
-                "enojo": "#FF9AA2",
-                "ansiedad": "#FFDAC1",
-                "calma": "#C7CEEA"
+                "Enojo": "#FF9AA2",
+                "Ansiedad": "#653299",
+                "Tristeza": "#346ce7",
+                "Felicidad": "#fff27c",
+                "Productividad": "#fdb562",
+                "Molestia": "#d2fd8d",
+                "Cansancio": "#bebebe",
+                "Indiferencia": "#eca5ec"
             }
         },
         actions: {
@@ -67,7 +72,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     return false
                 } else {
                     const data = await response.json();
-                    setStore({ notas: data.notas })
+                    setStore({ notas: data.perfil.notas })
                     return true
                 }
             },

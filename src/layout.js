@@ -17,12 +17,12 @@ const Layout = () => {
         <BrowserRouter>
             <Navbar />
             <Switch>
-                <Route exact path="/login" component={Login}/>
+                <Route exact path="/login" component={Login} />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/register" component={Register} />
-                <PrivateRoute exact path="/perfil" component={Perfil}/>
+                <PrivateRoute path="/perfil" component={Perfil} />
                 <Route component={NotFound} />
-            </Switch> 
+            </Switch>
             <Footer />
         </BrowserRouter>
     )
