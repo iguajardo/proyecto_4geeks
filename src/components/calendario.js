@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
+import { useColors } from '../hooks/useColors';
 import { Context } from '../store/appContext';
 import '../styles/calendar.css';
 import { CategoriaColores } from './CategoriaColores'
@@ -10,21 +11,23 @@ const Calendario = () => {
 
     const { store, actions } = useContext(Context);
     const [categoria, setCategoria] = useState("")
+    const [pickedCategory, handleChange] = useColors("")
 
     function renderDay(day) {
 
-        let color = store.calendar[day.setHours(0, 0, 0, 0)] || "GhostWhite";
+        let category = store.calendar[day.setHours(0, 0, 0, 0)];
 
         function addColor() {
+            if (!pickedCategory) return;
             actions.changeCalendar({
-                [day.valueOf()]: "red"
+                [day.valueOf()]: pickedCategory
             })
         }
 
         return (
             <div
                 className="day"
-                style={{ backgroundColor: color }}
+                style={{ backgroundColor: store.categorias[category] || "white" }}
                 onClick={addColor}
             ></div>
         );
@@ -36,7 +39,7 @@ const Calendario = () => {
                 renderDay={renderDay}
                 numberOfMonths={1}
             />
-            <CategoriaColores />
+            <CategoriaColores onChange={handleChange} />
         </div>
     )
 }

@@ -2,12 +2,12 @@ import React, { useContext } from 'react'
 import { Context } from '../store/appContext'
 import '../styles/boxcolors.css'
 
-export const CategoriaColores = () => {
+export const CategoriaColores = ({ onChange }) => {
 
     const { store } = useContext(Context)
 
     return (
-        <div className="mb-3 box-colors">
+        <div className="box-colors">
             {
                 Object.keys(store.categorias).map((categoria) => {
                     return (
@@ -17,6 +17,7 @@ export const CategoriaColores = () => {
                                 name="flexRadioDefault"
                                 id={categoria}
                                 value={categoria}
+                                onChange={onChange}
                             />
                             <label className="fake-radio me-2" style={{ backgroundColor: store.categorias[categoria] }} htmlFor={categoria}>
                                 <div>
