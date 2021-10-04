@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import { Context } from '../store/appContext';
-import '../styles/calendar.css'
+import '../styles/calendar.css';
+import { CategoriaColores } from './CategoriaColores'
 
 
 const Calendario = () => {
@@ -30,10 +31,13 @@ const Calendario = () => {
     }
 
     return (
-        <DayPicker
-            renderDay={renderDay}
-            numberOfMonths={1}
-        />
+        <div className="">
+            <DayPicker
+                renderDay={renderDay}
+                numberOfMonths={1}
+            />
+            <CategoriaColores />
+        </div>
     )
 }
 

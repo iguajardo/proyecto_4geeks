@@ -18,7 +18,7 @@ export const CategoriaColores = () => {
                                 name="flexRadioDefault"
                                 id={categoria}
                                 value={categoria}
-                                style={{ background: store.categorias[categoria] }}
+                                style={{ background: store.categorias[categoria], border: "none" }}
                             />
                             <label className="form-check-label" htmlFor={categoria}>
                                 {categoria}

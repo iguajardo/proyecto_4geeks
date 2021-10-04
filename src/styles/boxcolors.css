@@ -6,14 +6,20 @@
     padding: 10px;
 }
 
-input[type="radio"]:checked + label{
+input[type="radio"] {
+    width: 18px;
+    height: 18px;
+}
+
+input[type="radio"]:checked + label {
     position: relative;
 }
 
 input[type="radio"]:checked + label::after {
-    content:"✔";
+    text-align: center;
+    content:"✓";
     z-index: 99;
-    color:green;
+    color:rgb(38, 163, 0);
     position: absolute;
-    right: -25px;
+    right: -15px;
 }
