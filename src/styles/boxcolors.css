@@ -1,25 +1,27 @@
 .box-colors {
     border-radius: 5px;
-    width: 150px;
+    width: 180px;
     height: auto;
     background-color: rgb(223, 211, 198);
     padding: 10px;
 }
 
 input[type="radio"] {
-    width: 18px;
-    height: 18px;
+    display: none;
 }
 
-input[type="radio"]:checked + label {
-    position: relative;
+.radio-container {
+    display: flex;
 }
 
-input[type="radio"]:checked + label::after {
-    text-align: center;
-    content:"✓";
-    z-index: 99;
-    color:rgb(38, 163, 0);
-    position: absolute;
-    right: -15px;
+.fake-radio {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    text-shadow: 0 0 2px rgb(0 0 0 /70%);
 }

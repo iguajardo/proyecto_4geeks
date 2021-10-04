@@ -11,15 +11,18 @@ export const CategoriaColores = () => {
             {
                 Object.keys(store.categorias).map((categoria) => {
                     return (
-                        <div key={categoria}>
+                        <div key={categoria} className="radio-container mb-2">
                             <input
-                                className="form-check-input me-2"
                                 type="radio"
                                 name="flexRadioDefault"
                                 id={categoria}
                                 value={categoria}
-                                style={{ background: store.categorias[categoria], border: "none" }}
                             />
+                            <label className="fake-radio me-2" style={{ backgroundColor: store.categorias[categoria] }} htmlFor={categoria}>
+                                <div>
+                                    ✓
+                                </div>
+                            </label>
                             <label className="form-check-label" htmlFor={categoria}>
                                 {categoria}
                             </label>
