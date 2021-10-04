@@ -19,7 +19,7 @@ export const EjercicioResp =  () => {
     
     return (
         <div>
-            <div className="container_ejercicio">
+            <div className="container_ejercicio m-auto">
                 <div className="outer-circle">
                     <div id="inner-circle">
                         <span id="message" />
