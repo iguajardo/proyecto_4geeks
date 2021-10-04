@@ -1,7 +1,7 @@
+
 import React from 'react';
 import Notas from '../components/Notas'
 import Calendario from '../components/Calendario'
-import { CategoriaColores } from '../components/CategoriaColores';
 import { NavPerfil } from '../components/NavPerfil';
 import { Route } from 'react-router-dom';
 
@@ -19,8 +19,8 @@ const Perfil = () => {
                 </div>
             </div>
             <NavPerfil />
-            <Route exact to="/perfil" component={Notas} />
-            <Route exact to="/perfil/calendario" component={Calendario} />
+            <Route exact path="/perfil" component={Notas} />
+            <Route exact path="/perfil/calendario" component={Calendario} />
         </div>
     )
 }

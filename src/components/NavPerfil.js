@@ -6,7 +6,7 @@ export const NavPerfil = () => {
         <nav>
             <ul className="nav nav-tabs justify-content-center">
                 <li className="nav-item">
-                    <NavLink exact to="/perfil" className="nav-link" aria-current="page">Notas</NavLink>
+                    <NavLink exact to="/perfil" className="nav-link">Notas</NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink exact to="/perfil/calendario" className="nav-link">Calendario</NavLink>
