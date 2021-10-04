@@ -2,7 +2,7 @@
     border-radius: 5px;
     width: 180px;
     height: auto;
-    background-color: rgb(223, 211, 198);
+    background-color: rgb(240, 231, 231);
     padding: 10px;
 }
 
@@ -22,6 +22,15 @@ input[type="radio"] {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color: white;
-    text-shadow: 0 0 2px rgb(0 0 0 /70%);
+    color: rgb(255, 249, 249);
+    text-shadow: 0 0 2px rgb(0 0 0 /60%);
+    font-weight: 600;
+}
+
+.fake-radio > div {
+    opacity: 0;
+    transition: all .3s ease;
+}
+input[type="radio"]:checked + .fake-radio > div {
+    opacity: 1;
 }
