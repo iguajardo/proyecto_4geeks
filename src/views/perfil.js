@@ -3,14 +3,13 @@ import Notas from '../components/Notas'
 import Calendario from '../components/calendario'
 import { NavPerfil } from '../components/NavPerfil';
 import { Route } from 'react-router-dom';
-import { useContext } from "react";
 import { Context } from "../store/appContext";
 
 
 const Perfil = () => {
 
-    const { store } = useContext(Context)
-  
+    const { store } = useContext(Context);
+
     return (
         <div className="container">
             <div className=" d-flex justify-content-center flex-column align-items-center m-4">
