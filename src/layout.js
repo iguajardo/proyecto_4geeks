@@ -9,6 +9,8 @@ import NotFound from './views/NotFound';
 import Login from './views/Login';
 import Perfil from './views/Perfil';
 import { PrivateRoute } from './rutas/PrivateRoute';
+import { EjercicioRespiracion } from './views/EjercicioRespiracion';
+import { Grounding } from './views/Grounding';
 
 const Layout = () => {
     return (
@@ -16,7 +18,9 @@ const Layout = () => {
             <Navbar />
             <Switch>
                 <Route exact path="/login" component={Login} />
+                <Route exact path="/ejercicio-respiracion" component={EjercicioRespiracion} />
                 <Route exact path="/" component={Home} />
+                <Route exact path="/grounding" component={Grounding} />
                 <Route exact path="/register" component={Register} />
                 <PrivateRoute path="/perfil" component={Perfil} />
                 <Route component={NotFound} />

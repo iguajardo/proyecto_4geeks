@@ -4,7 +4,7 @@ html {
 
 .calendar-container {
   /* background-color: aqua; */
-  background-image: url(../imgs/calendar-background.svg);
+  background-image: url(../img/calendar-background.svg);
   background-size: 600px;
   background-repeat: no-repeat;
   background-position-x: right;

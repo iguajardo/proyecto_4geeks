@@ -5,13 +5,13 @@ import '../styles/navbar.css';
 
 
 const Navbar = () => {
-    const { store, actions, setStore } = useContext(Context);
+    const { store, actions } = useContext(Context);
     const { token } = store;
 
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light mb-3">
+            <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light mb-3">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">
                         Serenity
@@ -34,11 +34,14 @@ const Navbar = () => {
                                     Home
                                 </NavLink>
                             </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link active" aria-current="page" to="/ejercicio-respiracion">
+                                    Ejercicio
+                                </NavLink>
+                            </li>
                         </ul>
-
                         {
                             token == null ? (
-
                                 <div className="btn-group">
                                     <button type="button" className="btn btn-light">
                                         <NavLink className="btn_perfil nav-link" to="/">
