@@ -3,30 +3,28 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import injectContext from './store/appContext';
-import Register from './views/register';
-import Home from './views/home';
-import NotFound from './views/notFound';
-import Login from './views/login';
-import Perfil from './views/perfil';
+import Register from './views/Register';
+import Home from './views/Home';
+import NotFound from './views/NotFound';
+import Login from './views/Login';
+import Perfil from './views/Perfil';
 import { PrivateRoute } from './rutas/PrivateRoute';
-import { ejercicioRespiracion } from './views/ejercicioRespiracion';
-import { Grounding } from './views/grounding';
-
-
+import { EjercicioRespiracion } from './views/EjercicioRespiracion';
+import { Grounding } from './views/Grounding';
 
 const Layout = () => {
     return (
         <BrowserRouter>
             <Navbar />
             <Switch>
-                <Route exact path="/login" component={Login}/>
-                <Route exact path="/ejercicio-respiracion" component={ejercicioRespiracion}/>
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/ejercicio-respiracion" component={EjercicioRespiracion} />
                 <Route exact path="/" component={Home} />
-                <Route exact path="/grounding" component={Grounding}/>
+                <Route exact path="/grounding" component={Grounding} />
                 <Route exact path="/register" component={Register} />
-                <PrivateRoute exact path="/perfil" component={Perfil}/>
+                <PrivateRoute path="/perfil" component={Perfil} />
                 <Route component={NotFound} />
-            </Switch> 
+            </Switch>
             <Footer />
         </BrowserRouter>
     )

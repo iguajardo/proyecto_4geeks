@@ -1,9 +1,9 @@
 import React from 'react'
 import { EjercicioResp } from '../components/Ejercicioresp'
-import { NavLink, withRouter, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
-export const ejercicioRespiracion = () => {
+export const EjercicioRespiracion = () => {
     return (
         <div className="container">
             <div className="row ">

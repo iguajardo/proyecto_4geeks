@@ -1,18 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import watch from '../img/watch.png'
 import listen from '../img/listen.png'
 import taste from '../img/taste.png'
 import smell from '../img/smell.png'
 import touch from '../img/touch.png'
 import mindfull from '../img/mindfull.png'
-import { NavLink, withRouter, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import '../styles/carrusel.css'
 
-
 export const Grounding = () => {
-
-
 
     return (
         <div className="container">
@@ -25,27 +22,27 @@ export const Grounding = () => {
             >
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={mindfull} className="d-flex w-50 m-auto" />
-                        <h3 className="text-center text-dark"> Bienvenido al ejercicio Pies en la Tierra</h3>
+                        <img src={mindfull} className="d-flex w-50 m-auto" alt="" />
+                        <h4 className="text-center text-dark"> Bienvenido al ejercicio Pies en la Tierra</h4>
                     </div>
                     <div className="carousel-item ">
-                        <img src={watch} className="d-flex w-50 m-auto" />
+                        <img src={watch} className="d-flex w-50 m-auto" alt="" />
                         <h3 className="text-center text-dark">Identifica 5 cosas que puedas mirar</h3>
                     </div>
                     <div className="carousel-item">
-                        <img src={listen} className="d-flex w-50 m-auto" />
+                        <img src={listen} className="d-flex w-50 m-auto" alt="" />
                         <h3 className="text-center text-dark">Identifica 4 cosas que puedas escuchar</h3>
                     </div>
                     <div className="carousel-item">
-                        <img src={touch} className="d-flex w-50 m-auto" />
+                        <img src={touch} className="d-flex w-50 m-auto" alt="" />
                         <h3 className="text-center text-dark">Identifica 3 cosas que puedas tocar</h3>
                     </div>
                     <div className="carousel-item">
-                        <img src={smell} className="d-flex w-50 m-auto" />
+                        <img src={smell} className="d-flex w-50 m-auto" alt="" />
                         <h3 className="text-center text-dark">Identifica 2 cosas que puedas oler </h3>
                     </div>
                     <div className="carousel-item">
-                        <img src={taste} className="d-flex w-50 m-auto" />
+                        <img src={taste} className="d-flex w-50 m-auto" alt="" />
                         <h3 className="text-center text-dark">Identifica 1 cosas que puedas saborear</h3>
                     </div>
 
@@ -84,7 +81,6 @@ export const Grounding = () => {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-
         </div>
     )
 }

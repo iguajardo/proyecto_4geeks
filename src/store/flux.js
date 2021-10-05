@@ -3,8 +3,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             apiUrl: `${process.env.REACT_APP_API_URL}`,
             token: null,
-            notas:[],
-            user_img:"",
+            notas: [],
+            user_img: "",
+            calendar: {},
             categorias: {
                 "Enojo": "#FF9AA2",
                 "Ansiedad": "#653299",
@@ -14,8 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 "Molestia": "#d2fd8d",
                 "Cansancio": "#bebebe",
                 "Indiferencia": "#eca5ec"
-              }
-            
+            }
         },
         actions: {
             loginUser: async (nombre_usuario, password) => {
@@ -50,82 +50,88 @@ const getState = ({ getStore, getActions, setStore }) => {
                     }
                 }
                 const response = await fetch(`${store.apiUrl}/api/tokencheck`, met);
-                console.log(response.status)
-                if (response.status !== 200 ){
-                    setStore({token: null})
-                }else{
+                if (response.status !== 200) {
+                    setStore({ token: null })
+                } else {
                     const data = await response.json();
                     localStorage.setItem("userToken", data.access_token);
                     setStore({ token: data.access_token });
-                    
+
                 }
             },
             getNotas: async () => {
                 const store = getStore();
                 const met = {
-                    method:'GET',
-                    headers:{
+                    method: 'GET',
+                    headers: {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${store.token}`
                     }
                 }
-                const response = await fetch (`${store.apiUrl}/api/profile`, met);
-                if (response.status !==200){
+                const response = await fetch(`${store.apiUrl}/api/profile`, met);
+                if (response.status !== 200) {
                     return false
-                }else{
+                } else {
                     const data = await response.json();
-                    setStore({notas: data.perfil.notas})
+                    setStore({ notas: data.perfil.notas })
                     return true
                 }
             },
-            postNota: async (titulo, contenido, categoria) =>{
+            postNota: async (titulo, contenido, categoria) => {
                 const store = getStore();
                 const met = {
                     method: 'POST',
-                    headers:{
+                    headers: {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${store.token}`
                     },
-                    body:JSON.stringify({
+                    body: JSON.stringify({
                         titulo,
                         contenido,
                         categoria
                     })
                 }
                 const response = await fetch(`${store.apiUrl}/api/note`, met);
-                if(response.status == 200){
-                    store.notas.push({titulo,contenido,categoria});
+                if (response.status === 200) {
+                    store.notas.push({ titulo, contenido, categoria });
                     getActions().getNotas()
                     return true
-                }else {
+                } else {
                     return false
                 }
-                
+
             },
             borrarNota: async (id) => {
                 const store = getStore();
                 const met = {
                     method: 'DELETE',
-                    headers:{
+                    headers: {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${store.token}`
                     }
                 }
-                const response = await fetch(`${store.apiUrl}/api/note/${id}`,met);
-                if (response.status !==200){
+                const response = await fetch(`${store.apiUrl}/api/note/${id}`, met);
+                if (response.status !== 200) {
                     return false
-                }else{
+                } else {
                     const data = await response.json();
-                    setStore({notas: data.perfil.notas})
+                    setStore({ notas: data.perfil.notas })
                     return true
                 }
             },
-            Logout: () =>{
+            Logout: () => {
                 localStorage.removeItem('userToken');
-                setStore({token:null, notas:[]})
+                setStore({ token: null, notas: [] })
             },
-
-            
+            changeCalendar: (newEntry) => {
+                const store = getStore();
+                setStore({
+                    calendar: {
+                        ...store.calendar,
+                        ...newEntry
+                    }
+                })
+            }
         }
     }
 }

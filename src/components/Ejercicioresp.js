@@ -1,22 +1,21 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import '../styles/ejercicioresp.css'
 import cycle from '../js/beatheanim'
 
 
 
-export const EjercicioResp =  () => {
+export const EjercicioResp = () => {
 
-    useEffect(()=>{
+    useEffect(() => {
         cycle();
         const ciclo = setInterval(() => {
-        cycle();
-    }, 19700);
-    return ()=>{
-        clearInterval(ciclo)
-    }
-    },[])
-   
-    
+            cycle();
+        }, 19700);
+        return () => {
+            clearInterval(ciclo)
+        }
+    }, [])
+
     return (
         <div>
             <div className="container_ejercicio m-auto">

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-
-
 const Register = () => {
 
     const [input, setInput] = useState({
@@ -16,15 +14,15 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         let mensaje = ""
-        if (!validateUsername(input.nombre_usuario)){
+        if (!validateUsername(input.nombre_usuario)) {
             mensaje += "El usuario no debe contener caracteres especiales"
         }
-        if (!validatePassword(input.password)){
+        if (!validatePassword(input.password)) {
             mensaje += "\nEl password debe contener 8 caracteres, incluir mayusc,minusc,numeros y caracteres especiales"
         }
-        if(mensaje.length > 0){
-            setIsRegister({"message":mensaje,"status":"error"})
-        }else{
+        if (mensaje.length > 0) {
+            setIsRegister({ "message": mensaje, "status": "error" })
+        } else {
 
             fetch(`${process.env.REACT_APP_API_URL}/api/register`, {
                 method: 'POST',
@@ -42,7 +40,7 @@ const Register = () => {
                         email: ""
                     })
                 })
-                .catch((error) => console.log(error))   
+                .catch((error) => console.log(error))
         }
     }
 
@@ -51,14 +49,14 @@ const Register = () => {
             ...input,
             [target.name]: target.value
         })
-        setIsRegister({"message":"","status":""})
+        setIsRegister({ "message": "", "status": "" })
     }
 
-    const validatePassword = (password) =>{
+    const validatePassword = (password) => {
         let passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-./]).{8,}$/;
         return passwordRegex.test(password)
     }
-    
+
     const validateUsername = (nombre_usuario) => {
         let usernameRegex = /^\w{3,100}$/;
         return usernameRegex.test(nombre_usuario)
