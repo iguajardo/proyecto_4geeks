@@ -19,15 +19,15 @@ export const EjercicioRespiracion = () => {
                 <div className="col-md-12 col-lg-6 d-flex justify-content-center my-3 flex-column">
                     <EjercicioResp />
                     <div className="row justify-content-center m-3">
-                        <button className="btn btn-light text-primary col-md-2 ">
+                        <button className="btn btn-light text-primary col-md-2 m-2">
                             <i className="fas fa-redo-alt p-0"></i>
                         </button>
-                        <button className="btn btn-light col-md-2 ">
+                        <button className="btn btn-light col-md-2 m-2 ">
                             <NavLink className="btn_perfil nav-link" to="/grounding">
                                 Siguiente ejercicio
                             </NavLink>
                         </button>
-                        <button className="btn btn-light col-md-2">
+                        <button className="btn btn-light col-md-2 m-2">
                             <NavLink className="btn_perfil nav-link" to="/">
                                 Me siento mejor!
                             </NavLink>
