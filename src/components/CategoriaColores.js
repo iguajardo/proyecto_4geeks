@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Context } from '../store/appContext'
 import '../styles/boxcolors.css'
 
-export const CategoriaColores = ({ onChange }) => {
+export const CategoriaColores = ({ onChange, value }) => {
 
     const { store } = useContext(Context)
 
@@ -17,7 +17,9 @@ export const CategoriaColores = ({ onChange }) => {
                                 name="flexRadioDefault"
                                 id={categoria}
                                 value={categoria}
-                                onChange={onChange}
+                                onChange={(e) => value && onChange(e, value)}
+                                disabled={value ? false : true}
+                                checked={store.calendar[value] === categoria ? true : false}
                             />
                             <label className="fake-radio me-2" style={{ backgroundColor: store.categorias[categoria] }} htmlFor={categoria}>
                                 <div>

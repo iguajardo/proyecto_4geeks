@@ -22,36 +22,34 @@ body{
     padding: 1.57rem;
 }
 
- .note-has-grid .nav-link {
-     padding: .5rem
- }
+.note-has-grid .nav-link {
+    padding: .5rem
+}
 
- .note-has-grid .single-note-item .card {
-     border-radius: 10px
- }
+.note-has-grid .single-note-item .card {
+    border-radius: 10px
+}
 
- .note-has-grid .single-note-item .favourite-note {
-     cursor: pointer
- }
+.note-has-grid .single-note-item .favourite-note {
+    cursor: pointer
+}
 
- .note-has-grid .single-note-item .side-stick {
-     position: absolute;
-     width: 3px;
-     height: 35px;
-     left: 0;
-     background-color: rgba(82, 95, 127, .5) 
- }
+.note-has-grid .single-note-item .side-stick {
+    position: absolute;
+    width: 3px;
+    height: 35px;
+    left: 0;
+    background-color: rgba(82, 95, 127, .5) 
+}
 
- 
+@media (max-width:767.98px) {
+    .note-has-grid .single-note-item {
+        max-width: 100%
+    }
+}
 
- @media (max-width:767.98px) {
-     .note-has-grid .single-note-item {
-         max-width: 100%
-     }
- }
-
- @media (max-width:991.98px) {
-     .note-has-grid .single-note-item {
-         max-width: 216px
-     }
- }
+@media (max-width:991.98px) {
+    .note-has-grid .single-note-item {
+        max-width: 216px
+    }
+}

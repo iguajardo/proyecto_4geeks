@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import { useColors } from '../hooks/useColors';
@@ -10,25 +10,33 @@ import { CategoriaColores } from './CategoriaColores'
 const Calendario = () => {
 
     const { store, actions } = useContext(Context);
-    const [categoria, setCategoria] = useState("")
-    const [pickedCategory, handleChange] = useColors("")
+    const [, handleChange,] = useColors("");
+    const [activeDay, setActiveDay] = useState(null);
+
+    useEffect(() => {
+        if (localStorage.getItem('activeDay')) {
+            setActiveDay(JSON.parse(localStorage.getItem('activeDay')))
+        }
+    }, [])
 
     function renderDay(day) {
 
-        let category = store.calendar[day.setHours(0, 0, 0, 0)];
+        const numberDate = day.setHours(0, 0, 0, 0)
+        const category = store.calendar[numberDate];
 
-        function addColor() {
-            if (!pickedCategory) return;
-            actions.changeCalendar({
-                [day.valueOf()]: pickedCategory
-            })
+        function changeActive() {
+            setActiveDay(numberDate)
+            localStorage.setItem('activeDay', numberDate)
         }
 
         return (
             <div
                 className="day"
-                style={{ backgroundColor: store.categorias[category] || "white" }}
-                onClick={addColor}
+                style={{
+                    backgroundColor: store.categorias[category] || "white",
+                    border: (activeDay === numberDate ? "3px solid #00BFFF" : "none")
+                }}
+                onClick={changeActive}
             ></div>
         );
     }
@@ -39,7 +47,7 @@ const Calendario = () => {
                 renderDay={renderDay}
                 numberOfMonths={1}
             />
-            <CategoriaColores onChange={handleChange} />
+            <CategoriaColores onChange={handleChange} value={activeDay} />
         </div>
     )
 }

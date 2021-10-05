@@ -1,13 +1,18 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { Context } from "../store/appContext"
 
 
 export const useColors = (categoria = "") => {
 
     const [state, setState] = useState(categoria)
+    const { actions } = useContext(Context)
 
-    const handleChange = ({ target }) => {
-        setState(target.value)
+    const handleChange = (e, value) => {
+        setState(e.target.value)
+        actions.changeCalendar({
+            [value]: e.target.value
+        })
     }
 
-    return [state, handleChange]
+    return [state, handleChange, setState]
 }
