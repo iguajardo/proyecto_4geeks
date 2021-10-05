@@ -26,7 +26,7 @@ export const Grounding = () => {
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src={mindfull} className="d-flex w-50 m-auto" />
-                        <h4 className="text-center text-dark"> Bienvenido al ejercicio Pies en la Tierra</h4>
+                        <h3 className="text-center text-dark"> Bienvenido al ejercicio Pies en la Tierra</h3>
                     </div>
                     <div className="carousel-item ">
                         <img src={watch} className="d-flex w-50 m-auto" />

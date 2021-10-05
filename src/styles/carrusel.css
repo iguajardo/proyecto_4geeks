@@ -3,5 +3,9 @@
     filter: invert(100%);
 }
 img{
-    height:500px;
+    height:510px;
+}
+
+h3{
+    margin-top: 10px;
 }
