@@ -10,7 +10,7 @@ export const EjercicioResp =  () => {
         cycle();
         const ciclo = setInterval(() => {
         cycle();
-    }, 17000);
+    }, 19700);
     return ()=>{
         clearInterval(ciclo)
     }
@@ -19,7 +19,7 @@ export const EjercicioResp =  () => {
     
     return (
         <div>
-            <div className="container_ejercicio">
+            <div className="container_ejercicio m-auto">
                 <div className="outer-circle">
                     <div id="inner-circle">
                         <span id="message" />

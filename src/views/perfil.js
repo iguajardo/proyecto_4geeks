@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import Notas from '../components/notas'
-import Calendario from '../components/calendario'
+import Notas from '../components/Notas'
+
 
 
 
@@ -10,7 +10,7 @@ const Perfil = () => {
 
     return (
         <>
-            <div className="container pt-5">
+            <div className="container">
                 <div className=" d-flex justify-content-center flex-column align-items-center m-4">
                     <div className="imagen rounded-circle" style={{ background: "black", width: "100px", height: "100px" }}>
                     </div>
@@ -64,7 +64,7 @@ const Perfil = () => {
                             role="tabpanel"
                             aria-labelledby="nav-profile-tab"
                         >
-                            <Calendario/>
+                            
                         </div>
                         <div
                             className="tab-pane fade"
