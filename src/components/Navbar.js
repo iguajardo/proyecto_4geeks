@@ -39,6 +39,7 @@ const Navbar = () => {
                                     Ejercicio
                                 </NavLink>
                             </li>
+                            
                         </ul>
                         {
                             token === null ? (
