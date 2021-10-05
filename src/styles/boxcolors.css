@@ -1,0 +1,37 @@
+.box-colors {
+    border-radius: 5px;
+    width: 180px;
+    height: auto;
+    background-color: rgb(255 255 255 /70%);
+    padding: 10px;
+    box-shadow: 0 3px 8px rgb(0 0 0 /20%);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.radio-container {
+    display: flex;
+}
+
+.fake-radio {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: rgb(255, 249, 249);
+    text-shadow: 0 0 2px rgb(0 0 0 /60%);
+    font-weight: 600;
+}
+
+.fake-radio > div {
+    opacity: 0;
+    transition: all .3s ease;
+}
+input[type="radio"]:checked + .fake-radio > div {
+    opacity: 1;
+}

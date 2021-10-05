@@ -6,8 +6,8 @@ import '../styles/navbar.css';
 
 const Navbar = () => {
     const { store, actions, setStore } = useContext(Context);
-    const {token} = store;
-    
+    const { token } = store;
+
 
     return (
         <>
@@ -37,63 +37,63 @@ const Navbar = () => {
                         </ul>
 
                         {
-                            token == null ?(
-                            
-                            <div className="btn-group">
-                            <button type="button" className="btn btn-light">
-                                <NavLink className="btn_perfil nav-link" to="/">
-                                    <i className="far fa-user-circle fs-4"></i>
-                                </NavLink>
-                            </button>
-                            <button
-                                type="button"
-                                className="btn btn-light dropdown-toggle   dropdown-toggle-split"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                <span className="visually-hidden">Toggle Dropdown</span>
-                            </button>
-                            <ul className="dropdown-menu dropdown-menu-end">
-                                <li>
-                                    <Link className="dropdown-item" to="/register">
-                                        Registrarse
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="dropdown-item" to="/login">
-                                        Iniciar Sesion
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                        ):(
-                            <div className="btn-group">
-                            <button type="button" className="btn btn-light">
-                                <NavLink className="btn_perfil nav-link" to="/perfil">
-                                    <i className="far fa-user-circle fs-4"></i>
-                                </NavLink>
-                            </button>
-                            <button
-                                type="button"
-                                className="btn btn-light dropdown-toggle   dropdown-toggle-split"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                <span className="visually-hidden">Toggle Dropdown</span>
-                            </button>
-                            <ul className="dropdown-menu dropdown-menu-end">
-                                <li>
-                                    <button className="dropdown-item"  onClick={actions.Logout}>
-                                        Cerrar Sesion
+                            token == null ? (
+
+                                <div className="btn-group">
+                                    <button type="button" className="btn btn-light">
+                                        <NavLink className="btn_perfil nav-link" to="/">
+                                            <i className="far fa-user-circle fs-4"></i>
+                                        </NavLink>
                                     </button>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                        )
-                        
+                                    <button
+                                        type="button"
+                                        className="btn btn-light dropdown-toggle   dropdown-toggle-split"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        <span className="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <ul className="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <Link className="dropdown-item" to="/register">
+                                                Registrarse
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link className="dropdown-item" to="/login">
+                                                Iniciar Sesion
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            ) : (
+                                <div className="btn-group">
+                                    <button type="button" className="btn btn-light">
+                                        <NavLink className="btn_perfil nav-link" to="/perfil">
+                                            <i className="far fa-user-circle fs-4"></i>
+                                        </NavLink>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className="btn btn-light dropdown-toggle   dropdown-toggle-split"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        <span className="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <ul className="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <button className="dropdown-item" onClick={actions.Logout}>
+                                                Cerrar Sesion
+                                            </button>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            )
+
                         }
-                        
+
                     </div>
                 </div>
             </nav>
