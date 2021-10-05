@@ -41,7 +41,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                         {
-                            token == null ? (
+                            token === null ? (
                                 <div className="btn-group">
                                     <button type="button" className="btn btn-light">
                                         <NavLink className="btn_perfil nav-link" to="/">
@@ -50,7 +50,7 @@ const Navbar = () => {
                                     </button>
                                     <button
                                         type="button"
-                                        className="btn btn-light dropdown-toggle   dropdown-toggle-split"
+                                        className="btn btn-light dropdown-toggle dropdown-toggle-split"
                                         data-bs-toggle="dropdown"
                                         aria-expanded="false"
                                     >

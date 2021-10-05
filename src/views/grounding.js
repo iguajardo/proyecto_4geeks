@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import watch from '../img/watch.png'
 import listen from '../img/listen.png'
 import taste from '../img/taste.png'
