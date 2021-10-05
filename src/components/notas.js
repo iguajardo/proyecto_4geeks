@@ -2,14 +2,14 @@ import React, { useContext, useState } from 'react';
 import { Context } from '../store/appContext';
 import '../styles/card.css'
 import { FaStar, FaTrash } from 'react-icons/fa';
-import Modal from './modal'
+import Modal from './Modal'
 
 
 
 const Notas = () => {
     const { store, actions, setStore } = useContext(Context);
     const { notas, categorias } = store;
-    
+
     const [readyToDelete, setReadyToDelete] = useState(true);
 
     return (
@@ -63,17 +63,17 @@ const Notas = () => {
                                 !!notas &&
                                 notas.map((notas, index) => {
                                     const { titulo, contenido, categoria, fecha } = notas;
-                                    const  newfecha = new Date(fecha)
+                                    const newfecha = new Date(fecha)
                                     return (
                                         <div className="col-md-4 single-note-item all-category" key={index} >
                                             <div className="card card-body">
-                                                <span className="side-stick" style={{background: store.categorias[categoria]}} />
+                                                <span className="side-stick" style={{ background: store.categorias[categoria] }} />
                                                 <h5
                                                     className="note-title text-truncate w-75 mb-0"
                                                     data-noteheading="Book a Ticket for Movie"
                                                 >
                                                     {titulo}
-                                                    <i className="point fa fa-circle ms-1 fs-6" style={{color: categorias[categoria]}} />
+                                                    <i className="point fa fa-circle ms-1 fs-6" style={{ color: categorias[categoria] }} />
                                                 </h5>
                                                 <p className="note-date text-muted">{newfecha.toLocaleDateString()}</p>
                                                 <div className="note-content">

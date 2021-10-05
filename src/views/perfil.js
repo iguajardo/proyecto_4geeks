@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import Notas from '../components/notas'
-import Calendario from '../components/calendario'
+import Notas from '../components/Notas'
+import Calendario from '../components/Calendario'
 
 
 
 const Perfil = () => {
 
-    
+
 
     return (
         <>
@@ -46,7 +46,7 @@ const Perfil = () => {
                             >
                                 Calendario
                             </button>
-                            
+
                         </div>
                     </nav>
                     <div className="tab-content" id="nav-tabContent">
@@ -56,7 +56,7 @@ const Perfil = () => {
                             role="tabpanel"
                             aria-labelledby="nav-home-tab"
                         >
-                            <Notas/>
+                            <Notas />
                         </div>
                         <div
                             className="tab-pane fade"
@@ -64,7 +64,7 @@ const Perfil = () => {
                             role="tabpanel"
                             aria-labelledby="nav-profile-tab"
                         >
-                            <Calendario/>
+                            <Calendario />
                         </div>
                         <div
                             className="tab-pane fade"
