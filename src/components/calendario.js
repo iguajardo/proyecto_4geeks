@@ -40,7 +40,7 @@ const Calendario = () => {
             <div
                 className="day"
                 style={{
-                    backgroundColor: store.categorias[category] || "white",
+                    backgroundColor: store.categorias[category] || "rgb(240, 240, 240)",
                     border: (activeDay === numberDate ? "3px solid #00BFFF" : "none"),
                     ...cellStyle
                 }}
@@ -51,15 +51,15 @@ const Calendario = () => {
 
 
     return (
-        <div className="row calendar-container mb-5">
-            <div className="col-5">
+        <div className="row calendar-container mb-5 gx">
+            <div className="col-7 calendar-div d-flex">
                 <DayPicker
                     renderDay={renderDay}
                     numberOfMonths={1}
                 />
-            </div>
-            <div className="col mt-5">
-                <CategoriaColores onChange={handleChange} value={activeDay} />
+                <div className="mt-5">
+                    <CategoriaColores onChange={handleChange} value={activeDay} />
+                </div>
             </div>
         </div>
     )

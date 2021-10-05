@@ -137,6 +137,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                         ...newEntry
                     }
                 })
+            },
+            saveCalendar: async () => {
+                const { calendar } = getStore()
             }
         }
     }

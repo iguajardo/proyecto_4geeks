@@ -4,7 +4,7 @@ import '../styles/boxcolors.css'
 
 export const CategoriaColores = ({ onChange, value }) => {
 
-    const { store } = useContext(Context)
+    const { store, actions } = useContext(Context)
 
     return (
         <div className="box-colors">
@@ -34,6 +34,12 @@ export const CategoriaColores = ({ onChange, value }) => {
                 })
             }
             <button className="btn btn-outline-primary mt-2 w-100">Ver notas</button>
+            <button
+                className="btn btn-primary mt-2 w-100"
+                onClick={actions.saveCalendar}
+            >
+                Guardar cambios
+            </button>
         </div>
     )
 }
