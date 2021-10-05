@@ -15,7 +15,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                 "Molestia": "#d2fd8d",
                 "Cansancio": "#bebebe",
                 "Indiferencia": "#eca5ec"
-            }
+            },
+            user_email: "",
+            nombre_usuario: ""
         },
         actions: {
             loginUser: async (nombre_usuario, password) => {
@@ -73,7 +75,11 @@ const getState = ({ getStore, getActions, setStore }) => {
                     return false
                 } else {
                     const data = await response.json();
-                    setStore({ notas: data.perfil.notas })
+                    setStore({
+                        notas: data.perfil.notas,
+                        user_email: data.email,
+                        nombre_usuario: data.nombre_usuario
+                    })
                     return true
                 }
             },

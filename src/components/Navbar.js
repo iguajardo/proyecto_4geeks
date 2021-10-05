@@ -39,7 +39,7 @@ const Navbar = () => {
                                     Ejercicio
                                 </NavLink>
                             </li>
-                            
+
                         </ul>
                         {
                             token === null ? (
@@ -74,12 +74,13 @@ const Navbar = () => {
                                 <div className="btn-group">
                                     <button type="button" className="btn btn-light">
                                         <NavLink className="btn_perfil nav-link" to="/perfil">
+                                            <span className="mx-3">{store.nombre_usuario}</span>
                                             <i className="far fa-user-circle fs-4"></i>
                                         </NavLink>
                                     </button>
                                     <button
                                         type="button"
-                                        className="btn btn-light dropdown-toggle   dropdown-toggle-split"
+                                        className="btn btn-light dropdown-toggle dropdown-toggle-split"
                                         data-bs-toggle="dropdown"
                                         aria-expanded="false"
                                     >
