@@ -1,5 +1,5 @@
 import React from 'react';
-import { EjercicioResp } from '../components/ejercicioresp';
+
 
 
 

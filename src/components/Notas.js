@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Context } from '../store/appContext';
 import '../styles/card.css'
 import { FaStar, FaTrash } from 'react-icons/fa';
-import Modal from './modal'
+import Modal from './Modal'
 
 
 

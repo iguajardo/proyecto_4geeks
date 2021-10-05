@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Footer from './components/footer';
-import Navbar from './components/navbar';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 import injectContext from './store/appContext';
 import Register from './views/register';
 import Home from './views/home';

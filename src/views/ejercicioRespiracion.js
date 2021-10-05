@@ -1,5 +1,5 @@
 import React from 'react'
-import { EjercicioResp } from '../components/ejercicioresp'
+import { EjercicioResp } from '../components/Ejercicioresp'
 import { NavLink, withRouter, Link } from 'react-router-dom';
 
 
@@ -19,7 +19,7 @@ export const ejercicioRespiracion = () => {
                 <div className="col-md-12 col-lg-6 d-flex justify-content-center my-3 flex-column">
                     <EjercicioResp />
                     <div className="row justify-content-center m-3">
-                        <button className="btn btn-primary col-md-2 ">
+                        <button className="btn btn-light text-primary col-md-2 ">
                             <i className="fas fa-redo-alt p-0"></i>
                         </button>
                         <button className="btn btn-light col-md-2 ">
