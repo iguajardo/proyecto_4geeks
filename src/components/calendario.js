@@ -51,7 +51,7 @@ const Calendario = () => {
 
 
     return (
-        <div className="row">
+        <div className="row calendar-container">
             <div className="col-5">
                 <DayPicker
                     renderDay={renderDay}

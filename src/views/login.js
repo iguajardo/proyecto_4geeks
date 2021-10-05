@@ -4,8 +4,6 @@ import { useContext, useRef } from "react";
 import { Context } from "../store/appContext";
 
 
-
-
 const Login = () => {
     const { actions } = useContext(Context);
     const inputUsername = useRef();

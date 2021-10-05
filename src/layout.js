@@ -10,8 +10,6 @@ import Login from './views/Login';
 import Perfil from './views/Perfil';
 import { PrivateRoute } from './rutas/PrivateRoute';
 
-
-
 const Layout = () => {
     return (
         <BrowserRouter>
