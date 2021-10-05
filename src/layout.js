@@ -3,14 +3,14 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import injectContext from './store/appContext';
-import Register from './views/Register';
-import Home from './views/Home';
-import NotFound from './views/NotFound';
-import Login from './views/Login';
-import Perfil from './views/Perfil';
+import Register from './views/register';
+import Home from './views/home';
+import NotFound from './views/notFound';
+import Login from './views/login';
+import Perfil from './views/perfil';
 import { PrivateRoute } from './rutas/PrivateRoute';
-import { EjercicioRespiracion } from './views/EjercicioRespiracion';
-import { Grounding } from './views/Grounding';
+import { EjercicioRespiracion } from './views/ejercicioRespiracion';
+import { Grounding } from './views/grounding';
 
 const Layout = () => {
     return (
