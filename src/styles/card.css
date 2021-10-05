@@ -42,6 +42,11 @@ body{
     background-color: rgba(82, 95, 127, .5) 
 }
 
+.botonborrar{
+    background: none;
+    border: none;
+}
+
 @media (max-width:767.98px) {
     .note-has-grid .single-note-item {
         max-width: 100%

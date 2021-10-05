@@ -103,7 +103,7 @@ const Modal = () => {
                                     })
                                 }
                             </div>
-                            <button className="btn btn-danger" data-dismiss="modal">
+                            <button className="btn btn-danger me-3" data-dismiss="modal">
                                 Descartar
                             </button>
                             <button

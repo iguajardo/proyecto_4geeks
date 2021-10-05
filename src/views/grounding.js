@@ -22,7 +22,7 @@ export const Grounding = () => {
             >
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={mindfull} className="d-flex w-50 m-auto" alt="" />
+                        <img src={mindfull} className="d-flex w-50 m-auto " alt="" />
                         <h4 className="text-center text-dark"> Bienvenido al ejercicio Pies en la Tierra</h4>
                     </div>
                     <div className="carousel-item ">
@@ -48,15 +48,15 @@ export const Grounding = () => {
 
                 </div>
                 <div className="row justify-content-center m-3">
-                    <button className="btn btn-light col-md-2" type="button" data-bs-slide-to="1" data-bs-target="#carouselExampleFade">
+                    <button className="btn btn-light col-md-2 m-2" type="button" data-bs-slide-to="1" data-bs-target="#carouselExampleFade">
                         <i className="fas fa-redo-alt p-0 text-primary"></i>
                     </button>
-                    <button className="btn btn-light col-md-2 ">
+                    <button className="btn btn-light col-md-2 m-2">
                         <NavLink className="btn_perfil nav-link" to="/ejercicio-respiracion">
                             Ejercicio de Respiración
                         </NavLink>
                     </button>
-                    <button className="btn btn-light col-md-2">
+                    <button className="btn btn-light col-md-2 m-2">
                         <NavLink className="btn_perfil nav-link" to="/">
                             Me siento mejor!
                         </NavLink>

@@ -85,7 +85,7 @@ const Notas = () => {
                                                     </p>
                                                 </div>
                                                 <div className="d-flex align-items-center">
-                                                    <button className="mr-1" onClick={(e) => {
+                                                    <button className=" botonborrar mr-1" onClick={(e) => {
                                                         e.target.disabled = true
                                                         console.log(e)
                                                         actions.borrarNota(notas.id)
