@@ -24,7 +24,7 @@ const Modal = () => {
             return;
         }
         postNota(note.titulo, note.contenido, note.categoria)
-        setNote({ titulo: "", contenido: "",categoria:"" })
+        setNote({ titulo: "", contenido: "", categoria: "" })
 
     }
 
@@ -78,26 +78,27 @@ const Modal = () => {
                                 />
                             </div>
                             <div className="form-check mb-3">
-                                
+
                                 {
-                                    Object.keys(store.categorias).map((color) => {
+                                    Object.keys(store.categorias).map((categoria) => {
                                         return (
-                                            <div  key={color}>
+                                            <div key={categoria} className="radio-container mb-2">
                                                 <input
-                                                    className="form-check-input"
                                                     type="radio"
                                                     name="categoria"
-                                                    id="flexRadioDefault1"
-                                                    value={color}
-                                                    style={{background: store.categorias[color]}}
+                                                    id={categoria}
+                                                    value={categoria}
                                                     onChange={handleChange}
                                                 />
-                                                <label className="form-check-label" htmlFor="categoria">
-                                                    {color}
+                                                <label className="fake-radio me-2" style={{ backgroundColor: store.categorias[categoria] }} htmlFor={categoria}>
+                                                    <div>
+                                                        ✓
+                                                    </div>
+                                                </label>
+                                                <label className="form-check-label" htmlFor={categoria}>
+                                                    {categoria}
                                                 </label>
                                             </div>
-
-                                            
                                         )
                                     })
                                 }
