@@ -29,25 +29,38 @@ const Calendario = () => {
             localStorage.setItem('activeDay', numberDate)
         }
 
+        const cellStyle = {
+            height: 60,
+            width: 60,
+            position: 'relative',
+            margin: 2
+        };
+
         return (
             <div
                 className="day"
                 style={{
                     backgroundColor: store.categorias[category] || "white",
-                    border: (activeDay === numberDate ? "3px solid #00BFFF" : "none")
+                    border: (activeDay === numberDate ? "3px solid #00BFFF" : "none"),
+                    ...cellStyle
                 }}
                 onClick={changeActive}
             ></div>
         );
     }
 
+
     return (
-        <div className="">
-            <DayPicker
-                renderDay={renderDay}
-                numberOfMonths={1}
-            />
-            <CategoriaColores onChange={handleChange} value={activeDay} />
+        <div className="row">
+            <div className="col-5">
+                <DayPicker
+                    renderDay={renderDay}
+                    numberOfMonths={1}
+                />
+            </div>
+            <div className="col mt-5">
+                <CategoriaColores onChange={handleChange} value={activeDay} />
+            </div>
         </div>
     )
 }

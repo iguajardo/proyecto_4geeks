@@ -9,9 +9,9 @@ html {
 
 .day{
   background-color: rgb(240, 239, 239);
-  height: 30px;
+  /* height: 30px;
   width: 30px;
-  margin: auto;
+  margin: auto; */
   border-radius: 5px;
   cursor: pointer;
 }
