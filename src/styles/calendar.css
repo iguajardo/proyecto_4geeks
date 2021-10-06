@@ -8,13 +8,13 @@ html {
   background-size: 600px;
   background-repeat: no-repeat;
   background-position-x: right;
-  background-position-y: top;
+  background-position-y: bottom;
 }
 
 .calendar-div {
   border-radius: 5px;
   box-shadow: 0 3px 8px rgb(0 0 0 /20%);
-  background-color: rgb(255 255 255 /70%);
+  background-color: rgba(255, 255, 255, .7);
 }
 
 .DayPicker-Day {

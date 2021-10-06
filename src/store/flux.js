@@ -78,7 +78,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                     setStore({
                         notas: data.perfil.notas,
                         user_email: data.email,
-                        nombre_usuario: data.nombre_usuario
+                        nombre_usuario: data.nombre_usuario,
+                        calendar: data.perfil.calendario
                     })
                     return true
                 }
@@ -139,7 +140,22 @@ const getState = ({ getStore, getActions, setStore }) => {
                 })
             },
             saveCalendar: async () => {
-                const { calendar } = getStore()
+                const store = getStore();
+                const calendarJson = JSON.stringify(store.calendar);
+                const met = {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${store.token}`
+                    },
+                    body: calendarJson
+                }
+                const response = await fetch(`${store.apiUrl}/api/calendar`, met);
+                if (response.status === 200) {
+                    return true
+                } else {
+                    return false
+                }
             }
         }
     }

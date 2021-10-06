@@ -9,7 +9,7 @@ import { CategoriaColores } from './CategoriaColores'
 
 const Calendario = () => {
 
-    const { store, actions } = useContext(Context);
+    const { store } = useContext(Context);
     const [, handleChange,] = useColors("");
     const [activeDay, setActiveDay] = useState(null);
 
@@ -52,7 +52,7 @@ const Calendario = () => {
 
     return (
         <div className="row calendar-container mb-5 gx">
-            <div className="col-7 calendar-div d-flex">
+            <div className="col-12 col-lg-9 col-xl-8 col-xxl-7 calendar-div d-flex flex-wrap">
                 <DayPicker
                     renderDay={renderDay}
                     numberOfMonths={1}
