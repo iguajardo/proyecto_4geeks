@@ -15,9 +15,9 @@ const Navbar = () => {
             <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light mb-3">
                 <div className="container-fluid">
                     <img className="logo" src={logo}/>
-                    <a className="navbar-brand" href="#">
+                    <Link className="navbar-brand" to="/">
                         Serenity
-                    </a>
+                    </Link>
                     <button
                         className="navbar-toggler"
                         type="button"

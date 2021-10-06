@@ -1,10 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Context } from '../store/appContext'
 import '../styles/boxcolors.css'
 
 export const CategoriaColores = ({ onChange, value }) => {
 
-    const { store } = useContext(Context)
+    const { store, actions } = useContext(Context)
+
+    const handleSave = () => {
+        actions.saveCalendar()
+    }
+
 
     return (
         <div className="box-colors">
@@ -17,7 +22,9 @@ export const CategoriaColores = ({ onChange, value }) => {
                                 name="flexRadioDefault"
                                 id={categoria}
                                 value={categoria}
-                                onChange={(e) => value && onChange(e, value)}
+                                onChange={(e) => {
+                                    return value && onChange(e, value)
+                                }}
                                 disabled={value ? false : true}
                                 checked={store.calendar[value] === categoria ? true : false}
                             />
@@ -33,7 +40,12 @@ export const CategoriaColores = ({ onChange, value }) => {
                     )
                 })
             }
-            <button className="btn btn-outline-primary mt-2 w-100">Ver notas</button>
+            <button
+                className="btn btn-primary mt-2 w-100"
+                onClick={handleSave}
+            >
+                Guardar cambios
+            </button>
         </div>
     )
 }

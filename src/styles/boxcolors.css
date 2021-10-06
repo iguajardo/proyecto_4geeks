@@ -2,9 +2,9 @@
     border-radius: 5px;
     width: 180px;
     height: auto;
-    background-color: rgb(255 255 255 /70%);
+    /* background-color: #ffffff; */
     padding: 10px;
-    box-shadow: 0 3px 8px rgb(0 0 0 /20%);
+    /* box-shadow: 0 3px 8px rgb(0 0 0 /20%); */
 }
 
 input[type="radio"] {

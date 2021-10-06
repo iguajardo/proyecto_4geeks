@@ -6,5 +6,6 @@ import '@popperjs/core';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Layout from './layout';
+import '../src/styles/main.css'
 
 ReactDOM.render(<Layout />, document.querySelector('#root'));

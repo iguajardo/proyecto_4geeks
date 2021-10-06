@@ -9,7 +9,7 @@ import { CategoriaColores } from './CategoriaColores'
 
 const Calendario = () => {
 
-    const { store, actions } = useContext(Context);
+    const { store } = useContext(Context);
     const [, handleChange,] = useColors("");
     const [activeDay, setActiveDay] = useState(null);
 
@@ -40,7 +40,7 @@ const Calendario = () => {
             <div
                 className="day"
                 style={{
-                    backgroundColor: store.categorias[category] || "white",
+                    backgroundColor: store.categorias[category] || "rgb(240, 240, 240)",
                     border: (activeDay === numberDate ? "3px solid #00BFFF" : "none"),
                     ...cellStyle
                 }}
@@ -51,15 +51,15 @@ const Calendario = () => {
 
 
     return (
-        <div className="row calendar-container mb-5">
-            <div className="col-5">
+        <div className="row calendar-container mb-5 gx">
+            <div className="col-12 col-lg-9 col-xl-8 col-xxl-7 calendar-div d-flex flex-wrap">
                 <DayPicker
                     renderDay={renderDay}
                     numberOfMonths={1}
                 />
-            </div>
-            <div className="col mt-5">
-                <CategoriaColores onChange={handleChange} value={activeDay} />
+                <div className="mt-5">
+                    <CategoriaColores onChange={handleChange} value={activeDay} />
+                </div>
             </div>
         </div>
     )

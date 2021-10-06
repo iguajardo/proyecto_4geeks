@@ -11,13 +11,19 @@ html {
   background-position-y: bottom;
 }
 
+.calendar-div {
+  border-radius: 5px;
+  box-shadow: 0 3px 8px rgb(0 0 0 /20%);
+  background-color: rgba(255, 255, 255, .7);
+}
+
 .DayPicker-Day {
   padding: 2px;
   margin: 0;
 }
 
 .day{
-  background-color: rgb(240, 239, 239);
+  /* background-color: rgb(240, 240, 240); */
   /* height: 30px;
   width: 30px;
   margin: auto; */

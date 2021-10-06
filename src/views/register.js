@@ -61,7 +61,7 @@ const Register = () => {
             ...input,
             [target.name]: target.value
         })
-        setIsRegister({ "message": "", "status": "" })
+        //setIsRegister({ "message": "", "status": "" })
     }
 
     const validatePassword = (password) => {
@@ -85,11 +85,11 @@ const Register = () => {
                         <form onSubmit={handleSubmit} className="flex-column g-3" >
                             {isRegister.status === "ok" ?
                                 <div className="alert alert-success" role="alert">
-                                    {isRegister.message}
+                                    Usuario creado correctamente!
                                 </div>
                                 : isRegister.status === "error" &&
                                 <div className="alert alert-danger" role="alert">
-                                    {isRegister.message}
+                                    Usuario/correo ya existe!
                                 </div>
                             }
                             <div className="col-md-12">

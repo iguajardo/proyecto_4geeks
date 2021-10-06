@@ -81,8 +81,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                         notas: data.perfil.notas,
                         user_email: data.email,
                         nombre_usuario: data.nombre_usuario,
-                        user_img:data.perfil.user_img
-
+                        user_img:data.perfil.user_img,
+                        calendar: data.perfil.calendario
                     })
                     console.log(data)
                     return true
@@ -148,6 +148,24 @@ const getState = ({ getStore, getActions, setStore }) => {
                 const response = await fetch(`${store.apiUserPic}`);
                 const data = await response.json()
                 setStore({randomUser:data.results[0].picture.large})
+            },
+            saveCalendar: async () => {
+                const store = getStore();
+                const calendarJson = JSON.stringify(store.calendar);
+                const met = {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${store.token}`
+                    },
+                    body: calendarJson
+                }
+                const response = await fetch(`${store.apiUrl}/api/calendar`, met);
+                if (response.status === 200) {
+                    return true
+                } else {
+                    return false
+                }
             }
         }
     }
