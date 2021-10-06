@@ -17,7 +17,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                 "Indiferencia": "#eca5ec"
             },
             user_email: "",
-            nombre_usuario: ""
+            nombre_usuario: "",
+            apiUserPic: "https://randomuser.me/api",
+            randomUser:""
         },
         actions: {
             loginUser: async (nombre_usuario, password) => {
@@ -137,6 +139,19 @@ const getState = ({ getStore, getActions, setStore }) => {
                         ...newEntry
                     }
                 })
+            }, 
+            getProfilePic: async()=>{
+                const store = getStore;
+                const met ={
+                    method: 'GET',
+                    headers:{
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${store.token}`
+                    }
+                }
+                const response = await fetch(`${store.apiUserPic}`, met);
+                const data = await response.json()
+                setStore({randomUser:data.results.picture.large})
             }
         }
     }
