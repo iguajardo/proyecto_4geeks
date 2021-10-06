@@ -2,17 +2,19 @@ import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
 import { NavLink, withRouter, Link } from 'react-router-dom';
 import '../styles/navbar.css';
+import logo from '../img/logo.png'
 
 
 const Navbar = () => {
     const { store, actions } = useContext(Context);
-    const { token } = store;
+    const { token, user_img } = store;
 
 
     return (
         <>
             <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light mb-3">
                 <div className="container-fluid">
+                    <img className="logo" src={logo}/>
                     <a className="navbar-brand" href="#">
                         Serenity
                     </a>
@@ -30,12 +32,12 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <NavLink className="nav-link active" aria-current="page" to="/">
+                                <NavLink className="nav-link" aria-current="page" to="/">
                                     Home
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link active" aria-current="page" to="/ejercicio-respiracion">
+                                <NavLink className="nav-link" aria-current="page" to="/ejercicio-respiracion">
                                     Ejercicio
                                 </NavLink>
                             </li>
@@ -45,37 +47,23 @@ const Navbar = () => {
                             token === null ? (
                                 <div className="btn-group">
                                     <button type="button" className="btn btn-light">
-                                        <NavLink className="btn_perfil nav-link" to="/">
-                                            <i className="far fa-user-circle fs-4"></i>
+                                        <NavLink className="btn_perfil nav-link" to="/login">
+                                            Iniciar sesion
                                         </NavLink>
                                     </button>
-                                    <button
-                                        type="button"
-                                        className="btn btn-light dropdown-toggle dropdown-toggle-split"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        <span className="visually-hidden">Toggle Dropdown</span>
+                                    <button type="button" className="btn btn-light">
+                                        <NavLink className="btn_perfil nav-link" to="/register">
+                                            Registrarse
+                                        </NavLink>
                                     </button>
-                                    <ul className="dropdown-menu dropdown-menu-end">
-                                        <li>
-                                            <Link className="dropdown-item" to="/register">
-                                                Registrarse
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className="dropdown-item" to="/login">
-                                                Iniciar Sesion
-                                            </Link>
-                                        </li>
-                                    </ul>
                                 </div>
                             ) : (
                                 <div className="btn-group">
                                     <button type="button" className="btn btn-light">
-                                        <NavLink className="btn_perfil nav-link" to="/perfil">
+                                        <NavLink className="btn_perfil nav-link d-flex" to="/perfil">
                                             <span className="mx-3">{store.nombre_usuario}</span>
-                                            <i className="far fa-user-circle fs-4"></i>
+                                            <div className="imagen rounded-circle" style={{ backgroundImage: `url(${user_img})`, width: "30px", height: "30px", backgroundPosition: "center", backgroundSize: "cover" }}>
+                                            </div>
                                         </NavLink>
                                     </button>
                                     <button

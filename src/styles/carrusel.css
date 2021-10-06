@@ -3,9 +3,14 @@
     filter: invert(100%);
 }
 img{
-    height:510px;
+    height:400px;
 }
 
 h3{
     margin-top: 10px;
+}
+
+p{
+    text-align: center;
+    margin-top: 20px;
 }

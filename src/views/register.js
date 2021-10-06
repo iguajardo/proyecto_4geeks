@@ -1,15 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import { Context } from "../store/appContext";
 
 const Register = () => {
-
+    
+    const { store,actions } = useContext(Context);
     const [input, setInput] = useState({
         nombre_usuario: "",
         password: "",
-        email: ""
+        email: "",
+        user_img:""
     })
-
+    
     const [isRegister, setIsRegister] = useState({ message: "", status: "" })
+    
+    useEffect(() => {
+        actions.getProfilePic()
+    }, [])
 
+    useEffect(()=>{
+        setInput({
+            ...input, user_img:store.randomUser
+        })
+    },[store.randomUser])
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -34,7 +46,7 @@ const Register = () => {
                 .then((response) => response.json())
                 .then((data) => {
                     setIsRegister(data)
-                    setInput({
+                    setInput({ ...input,
                         nombre_usuario: "",
                         password: "",
                         email: ""

@@ -1,10 +1,11 @@
 import React from 'react'
-import watch from '../img/watch.png'
-import listen from '../img/listen.png'
-import taste from '../img/taste.png'
-import smell from '../img/smell.png'
-import touch from '../img/touch.png'
-import mindfull from '../img/mindfull.png'
+import watchsvg from '../img/watchsvg.svg'
+import listensvg from '../img/listensvg.svg'
+import tastesvg from '../img/tastesvg.svg'
+import smellsvg from '../img/smellsvg.svg'
+import touchsvg from '../img/touchsvg.svg'
+import mindfullsvg from '../img/mindfullsvg.svg'
+import congrats from '../img/congrats.svg'
 import { NavLink } from 'react-router-dom';
 
 import '../styles/carrusel.css'
@@ -22,28 +23,128 @@ export const Grounding = () => {
             >
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={mindfull} className="d-flex w-50 m-auto " alt="" />
-                        <h4 className="text-center text-dark"> Bienvenido al ejercicio Pies en la Tierra</h4>
+                        <div className="card mb-3 bg-transparent" >
+                            <div className="row g-0">
+                                <div className="col-md-7  d-flex flex-row-reverse">
+                                    <img src={mindfullsvg} className="d-flex " alt="" />
+                                </div>
+                                <div className="col-md-3 d-flex align-items-center">
+                                    <div className="card-body">
+                                        <h4 className="text-center text-dark"> Bienvenido al ejercicio Pies en la Tierra</h4>
+                                        <p className="card-text">
+                                        Este ejercicio te ayudara a mantenerte "en el momento" cuando tu mente y cuerpo quieran 
+                                        regresar a momentos de trauma o estres.<br/> Asi que, ve a un lugar tranqnuilo y sigue nuestras instrucciones.
+                                        </p>
+                                        <p class="card-text text-end"><small class="text-muted">Haz click aqui para continuar ➜</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="carousel-item ">
-                        <img src={watch} className="d-flex w-50 m-auto" alt="" />
-                        <h3 className="text-center text-dark">Identifica 5 cosas que puedas mirar</h3>
+                        <div className="card mb-3 bg-transparent" >
+                            <div className="row g-0">
+                                <div className="col-md-7  d-flex flex-row-reverse">
+                                    <img src={watchsvg} className="d-flex" alt="" />
+                                </div>
+                                <div className="col-md-3 d-flex align-items-center">
+                                    <div className="card-body pasos">
+                                        <h3 className="text-center text-dark">Identifica 5 cosas que puedas mirar</h3>
+                                        <p className="card-text">
+                                            Busca a tu alrededor y nombra 5 cosas que puedas mirar.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="carousel-item">
-                        <img src={listen} className="d-flex w-50 m-auto" alt="" />
-                        <h3 className="text-center text-dark">Identifica 4 cosas que puedas escuchar</h3>
+                        <div className="card mb-3 bg-transparent" >
+                            <div className="row g-0">
+                                <div className="col-md-7 d-flex flex-row-reverse">
+                                    <img src={listensvg} className="d-flex" alt="" />
+                                </div>
+                                <div className="col-md-3 d-flex align-items-center">
+                                    <div className="card-body pasos">
+                                        <h3 className="text-center text-dark">Identifica 4 cosas que puedas escuchar</h3>
+                                        <p className="card-text">
+                                            Cierra los ojos, presta atencion a los sonidos a tu alrededor y trata de identificar 4 de ellos.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="carousel-item">
-                        <img src={touch} className="d-flex w-50 m-auto" alt="" />
-                        <h3 className="text-center text-dark">Identifica 3 cosas que puedas tocar</h3>
+                        <div className="card mb-3 bg-transparent" >
+                            <div className="row g-0">
+                                <div className="col-md-7 d-flex flex-row-reverse">
+                                    <img src={touchsvg} className="d-flex" alt="" />
+                                </div>
+                                <div className="col-md-3 d-flex align-items-center">
+                                    <div className="card-body pasos">
+                                        <h3 className="text-center text-dark">Identifica 3 cosas que puedas tocar</h3>
+                                        <p className="card-text">
+                                            Ahora, busca objetos que tengas cerca y puedas tocar, identifica tres de ellos.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="carousel-item">
-                        <img src={smell} className="d-flex w-50 m-auto" alt="" />
-                        <h3 className="text-center text-dark">Identifica 2 cosas que puedas oler </h3>
+                        <div className="card mb-3 bg-transparent" >
+                            <div className="row g-0">
+                                <div className="col-md-7 offset-1 d-flex flex-row-reverse">
+                                    <img src={smellsvg} className="d-flex" alt="" />
+                                </div>
+                                <div className="col-md-3  d-flex align-items-center">
+                                    <div className="card-body pasos">
+                                        <h3 className="text-center text-dark">Identifica 2 cosas que puedas oler </h3>
+                                        <p className="card-text">
+                                            Trata de concentrarte en tu olfato, y reconoce dos oles que puedas percibir.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="carousel-item">
-                        <img src={taste} className="d-flex w-50 m-auto" alt="" />
-                        <h3 className="text-center text-dark">Identifica 1 cosas que puedas saborear</h3>
+                        <div className="card mb-3 bg-transparent" >
+                            <div className="row g-0">
+                                <div className="col-md-7 d-flex flex-row-reverse">
+                                    <img src={tastesvg} className="d-flex" alt="" />
+                                </div>
+                                <div className="col-md-3 d-flex align-items-center">
+                                    <div className="card-body pasos">
+                                        <h3 className="text-center text-dark">Identifica 1 cosas que puedas saborear</h3>
+                                        <p className="card-text">
+                                            Por ultimo, distingue un sabor y detallalo. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="carousel-item">
+                        <div className="card mb-3 bg-transparent" >
+                            <div className="row g-0">
+                                <div className="col-md-7 d-flex flex-row-reverse">
+                                    <img src={congrats} className="d-flex" alt="" />
+                                </div>
+                                <div className="col-md-3 d-flex align-items-center">
+                                    <div className="card-body pasos">
+                                        <h3 className="text-center text-dark">Lo Lograste!!</h3>
+                                        <p className="card-text">
+                                            Felicidades por entregarte a este espacio de cuidado, esperamos que te haya servido para centrar tu mente en el presente.
+                                             Si lo deseas, puedes volver a nuestro ejercicio de respiracion para culmunar.<br/>
+                                             Vuelve cuando nos necesites.
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

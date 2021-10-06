@@ -80,8 +80,11 @@ const getState = ({ getStore, getActions, setStore }) => {
                     setStore({
                         notas: data.perfil.notas,
                         user_email: data.email,
-                        nombre_usuario: data.nombre_usuario
+                        nombre_usuario: data.nombre_usuario,
+                        user_img:data.perfil.user_img
+
                     })
+                    console.log(data)
                     return true
                 }
             },
@@ -141,17 +144,10 @@ const getState = ({ getStore, getActions, setStore }) => {
                 })
             }, 
             getProfilePic: async()=>{
-                const store = getStore;
-                const met ={
-                    method: 'GET',
-                    headers:{
-                        "Content-Type": "application/json",
-                        "Authorization": `Bearer ${store.token}`
-                    }
-                }
-                const response = await fetch(`${store.apiUserPic}`, met);
+                const store = getStore();
+                const response = await fetch(`${store.apiUserPic}`);
                 const data = await response.json()
-                setStore({randomUser:data.results.picture.large})
+                setStore({randomUser:data.results[0].picture.large})
             }
         }
     }
