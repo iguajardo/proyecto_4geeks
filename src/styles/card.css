@@ -11,6 +11,10 @@
 }
 .card {
     margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgb(0 0 0 /20%);
+     background-color: rgba(255, 255, 255, .7);
+    
 }
 .card-body {
     flex: 1 1 auto;
