@@ -23,9 +23,9 @@ section{
 }
 
 .titlePortada {
-    color: blueviolet;
+    color: #3F3D56;
     font-size: 25px;
-    font-weight: bold;
+    
     /* position: absolute; posicionar por sobre el elemento que lo contiene relative 
     transform: translateY(-50%); cambiando punto de referencia */
 }
@@ -46,6 +46,9 @@ section{
     background-size: 120% auto;
     background-image: linear-gradient(315deg, #4ecdc4 0%, #c797eb 75%);
 }
+.panicButton .nav-link{
+    color: #fff;
+}
 .panicButton:hover {
     background-position: right center;
 }
@@ -60,6 +63,9 @@ section{
 
 #descripcion1 img {
     border-radius: 50%;
+}
+#testimonios{
+    padding-top: 5rem;
 }
 
 #testimonios img {
