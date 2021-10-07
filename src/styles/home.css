@@ -79,14 +79,15 @@ section{
     color: black;
   }
 .social-icons {
-    width: 200px;
-    height: 50px;
+    color: black;
+    font-size: 50px;
     display: flex;
     justify-content: center;
+
 }
-.iconsSize {
-    width: 30%;
-    height: 30%;
-    display: flex;
-    justify-content: center;
+.fab {
+    margin-left: 15px;
 }
+.fab:hover {
+    color: blueviolet;
+  }

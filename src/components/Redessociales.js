@@ -6,11 +6,11 @@ const Redessociales = () => {
         <div classNameNameName="containerb">
             <section id="redessociales">
                 <img id="logoGrande" src={logo} />
-                <h3 classNameName="mt-3"> « Este debiese ser un slogan » </h3>
+                <h3 classNameName="mt-3"> « Un respiro a la vez » </h3>
                 <div className="social-icons mt-3">
-                    <i className="fab fa-facebook-f iconsSize"></i>
-                    <i className="fab fa-instagram iconsSize"></i>
-                    <i className="fab fa-twitter iconsSize"></i>
+                    <i className="fab fa-facebook-f"></i>
+                    <i className="fab fa-instagram"></i>
+                    <i className="fab fa-twitter"></i>
                 </div>
 
 
