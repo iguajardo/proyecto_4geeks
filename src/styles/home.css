@@ -64,11 +64,30 @@ section{
 
 #testimonios img {
     border-radius: 50%;
+    width: 200px;
+    height: 200px;
 }
 
 /* Contact Section */
-.fab {
-    font-size: 100px;
-    margin-right: 50px;
+#logoGrande {
+    width: 200px;
+    height: 200px;
+}
+.contenedorRedes {
+    font-size: 50px;
+    justify-content: center;
+    color: black;
   }
+.social-icons {
+    color: black;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
 
+}
+.fab {
+    margin-left: 15px;
+}
+.fab:hover {
+    color: blueviolet;
+  }
