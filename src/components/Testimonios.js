@@ -24,7 +24,7 @@ const Testimonios = () => {
                             <h4 className="fw-bold mt-4">Testimonio 2</h4>
                             <p className="px-3">
 
-                                « Conocí la página porque me la recomendó mi psicóloga. Estos ejercicios han sido de gran ayuda cuando siento que la ansiedad me invade. Además puedo llevar un registro y mostrarle a ella mis notas en las siguientes sesiones. »
+                                « Conocí la página porque me la recomendó mi psicóloga. Estos ejercicios han sido de gran ayuda cuando siento que la ansiedad me invade. Además, puedo llevar un registro y mostrarle a ella mis notas en las siguientes sesiones. »
 
 
                             </p>

@@ -77,7 +77,7 @@ const Navbar = () => {
                                     <ul className="dropdown-menu dropdown-menu-end">
                                         <li>
                                             <button className="dropdown-item" onClick={actions.Logout}>
-                                                Cerrar Sesion
+                                                Cerrar Sesión
                                             </button>
                                         </li>
 

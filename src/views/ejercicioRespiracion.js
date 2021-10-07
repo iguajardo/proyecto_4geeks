@@ -17,13 +17,13 @@ export const EjercicioRespiracion = () => {
                     <ul className="instrucciones">
                         <li>Cierra tu boca e inhala el aire a través de la nariz. Cuenta hasta cuatro</li>
                         <li>Aguanta la respiración durante siete segundos.</li>
-                        <li>Espira completamente el aire de tus pulmones durante ocho segundos.</li>
+                        <li>Exhala completamente el aire de tus pulmones durante ocho segundos.</li>
                     </ul>
                 </div>
                 <div className="col-md-12 col-lg-6 d-flex justify-content-center my-3 flex-column">
                     <div className="contenedorrespiracion">
                         <EjercicioResp breathe={breathe} setCycling={setCycling} />
-                        {!cycling&&(
+                        {!cycling && (
                             <div className="replypopup">
                                 <button className="btn btn-light text-primary col-md-2 m-2" onClick={() => { setBreathe(!breathe); setCycling(true) }} >
                                     <i className="fas fa-redo-alt p-0"></i>
