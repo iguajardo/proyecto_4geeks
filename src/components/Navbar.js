@@ -14,7 +14,7 @@ const Navbar = () => {
         <>
             <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light">
                 <div className="container-fluid">
-                    <img className="logo" src={logo}/>
+                    <img className="logo" src={logo} />
                     <Link className="navbar-brand" to="/">
                         Serenity
                     </Link>
@@ -32,7 +32,7 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <NavLink className="nav-link" aria-current="page" to="/">
+                                <NavLink exact className="nav-link" aria-current="page" to="/">
                                     Home
                                 </NavLink>
                             </li>
