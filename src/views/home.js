@@ -1,15 +1,29 @@
 import React from 'react';
+import Descripcion from '../components/Descripcion';
+import Portada from '../components/Portada';
+import Redessociales from '../components/Redessociales';
+import SectionBar from '../components/SectionBar';
+import Testimonios from '../components/Testimonios';
+import '../styles/home.css'
+
 
 const Home = () => {
-    return (
 
-        <div className="container">
-            <div className="row">
-                <div className="col-md-12 text-center align-content-center mt-4">
-                    <h1>Esto es HOME</h1>
-                </div>
-            </div>
-        </div>
+    return (
+        <>
+        
+        <SectionBar />
+        
+       <Portada />    
+
+       <Descripcion />
+
+       <Testimonios />
+
+        <Redessociales />    
+    
+        </>
+
     )
 }
 

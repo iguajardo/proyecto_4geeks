@@ -12,6 +12,7 @@ import { PrivateRoute } from './rutas/PrivateRoute';
 import { EjercicioRespiracion } from './views/ejercicioRespiracion';
 import { Grounding } from './views/grounding';
 
+
 const Layout = () => {
     return (
         <BrowserRouter>

@@ -12,7 +12,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light mb-3">
+            <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light">
                 <div className="container-fluid">
                     <img className="logo" src={logo}/>
                     <Link className="navbar-brand" to="/">
