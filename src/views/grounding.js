@@ -23,7 +23,7 @@ export const Grounding = () => {
             >
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <div className="card mb-3 bg-transparent" >
+                        <div className="mb-3 bg-transparent" >
                             <div className="row g-0 justify-content-center">
                                 <div className="col-md-5 d-flex flex-row-reverse">
                                     <img src={mindfullsvg} className="d-flex " alt="" />
@@ -42,7 +42,7 @@ export const Grounding = () => {
                         </div>
                     </div>
                     <div className="carousel-item ">
-                        <div className="card mb-3 bg-transparent" >
+                        <div className="mb-3 bg-transparent" >
                             <div className="row g-0 justify-content-center">
                                 <div className="col-md-5  d-flex flex-row-reverse">
                                     <img src={watchsvg} className="d-flex" alt="" />
@@ -59,7 +59,7 @@ export const Grounding = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card mb-3 bg-transparent" >
+                        <div className="mb-3 bg-transparent" >
                             <div className="row g-0 justify-content-center">
                                 <div className="col-md-5 d-flex flex-row-reverse">
                                     <img src={listensvg} className="d-flex" alt="" />
@@ -76,7 +76,7 @@ export const Grounding = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card mb-3 bg-transparent" >
+                        <div className="mb-3 bg-transparent" >
                             <div className="row g-0 justify-content-center">
                                 <div className="col-md-5 d-flex flex-row-reverse">
                                     <img src={touchsvg} className="d-flex" alt="" />
@@ -93,7 +93,7 @@ export const Grounding = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card mb-3 bg-transparent" >
+                        <div className="mb-3 bg-transparent" >
                             <div className="row g-0 justify-content-center">
                                 <div className="col-md-5 offset-1 d-flex flex-row-reverse">
                                     <img src={smellsvg} className="d-flex" alt="" />
@@ -110,7 +110,7 @@ export const Grounding = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card mb-3 bg-transparent" >
+                        <div className="mb-3 bg-transparent" >
                             <div className="row g-0 justify-content-center">
                                 <div className="col-md-5 d-flex flex-row-reverse">
                                     <img src={tastesvg} className="d-flex" alt="" />
@@ -127,7 +127,7 @@ export const Grounding = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card mb-3 bg-transparent" >
+                        <div className="mb-3 bg-transparent" >
                             <div className="row g-0 justify-content-center">
                                 <div className="col-md-5 d-flex flex-row-reverse">
                                     <img src={congrats} className="d-flex" alt="" />
