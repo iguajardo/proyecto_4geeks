@@ -19,7 +19,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             user_email: "",
             nombre_usuario: "",
             apiUserPic: "https://randomuser.me/api",
-            randomUser:""
+            randomUser: ""
         },
         actions: {
             loginUser: async (nombre_usuario, password) => {
@@ -81,10 +81,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                         notas: data.perfil.notas,
                         user_email: data.email,
                         nombre_usuario: data.nombre_usuario,
-                        user_img:data.perfil.user_img,
+                        user_img: data.perfil.user_img,
                         calendar: data.perfil.calendario
                     })
-                    console.log(data)
                     return true
                 }
             },
@@ -142,12 +141,12 @@ const getState = ({ getStore, getActions, setStore }) => {
                         ...newEntry
                     }
                 })
-            }, 
-            getProfilePic: async()=>{
+            },
+            getProfilePic: async () => {
                 const store = getStore();
                 const response = await fetch(`${store.apiUserPic}`);
                 const data = await response.json()
-                setStore({randomUser:data.results[0].picture.large})
+                setStore({ randomUser: data.results[0].picture.large })
             },
             saveCalendar: async () => {
                 const store = getStore();

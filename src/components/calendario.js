@@ -12,10 +12,17 @@ const Calendario = () => {
     const { store } = useContext(Context);
     const [, handleChange,] = useColors("");
     const [activeDay, setActiveDay] = useState(null);
+    const [isDisabled, setIsDisabled] = useState(true)
 
     useEffect(() => {
         if (localStorage.getItem('activeDay')) {
             setActiveDay(JSON.parse(localStorage.getItem('activeDay')))
+        }
+    }, [])
+
+    useEffect(() => {
+        if (localStorage.getItem('btnSaveStatus') !== null) {
+            setIsDisabled(JSON.parse(localStorage.getItem('btnSaveStatus')))
         }
     }, [])
 
@@ -58,7 +65,7 @@ const Calendario = () => {
                     numberOfMonths={1}
                 />
                 <div className="mt-5">
-                    <CategoriaColores onChange={handleChange} value={activeDay} />
+                    <CategoriaColores onChange={handleChange} value={activeDay} isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
                 </div>
             </div>
         </div>

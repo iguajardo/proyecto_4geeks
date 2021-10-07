@@ -1,14 +1,14 @@
-import react from "react";
+import React from "react";
 
 const Redessociales = () => {
     return (
         <section id="redessociales">
-        <div class="containerb social-icons">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-facebook-f"></i>
-        </div>
-    </section>
+            <div className="containerb social-icons">
+                <i className="fab fa-instagram"></i>
+                <i className="fab fa-twitter"></i>
+                <i className="fab fa-facebook-f"></i>
+            </div>
+        </section>
     )
 }
 

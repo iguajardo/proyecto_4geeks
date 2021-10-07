@@ -24,7 +24,6 @@ const cycle = async () => {
         rotatingPoint.style.animationName = 'rotate-cycle-3';
     }
     catch {
-        console.log("dismounted");
     }
 
     return true;
