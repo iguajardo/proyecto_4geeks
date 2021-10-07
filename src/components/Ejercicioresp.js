@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/ejercicioresp.css'
 import cycle from '../js/beatheanim'
 import pause from '../js/pause'
@@ -6,38 +6,37 @@ import pause from '../js/pause'
 
 
 export const EjercicioResp = (props) => {
-    const {breathe, setCycling}=props;
+    const { breathe, setCycling } = props;
 
-    useEffect( async() => {
+    useEffect(async () => {
         await pause(2000)
-        console.log(breathe)
         cycle();
         let control = 0;
         const ciclo = setInterval(() => {
             control++
-            if(control>2){
+            if (control > 2) {
                 setCycling(false)
                 clearInterval(ciclo)
-            }else{
+            } else {
                 cycle();
             }
         }, 19700);
         return () => {
-            clearInterval(ciclo)
+            clearInterval(ciclo);
         }
     }, [breathe])
 
     return (
-        
-            <div className="container_ejercicio m-auto">
-                <div className="outer-circle">
-                    <div id="inner-circle">
-                        <span id="message" />
-                    </div>
-                    <div id="rotating-circle"></div>
+
+        <div className="container_ejercicio m-auto">
+            <div className="outer-circle">
+                <div id="inner-circle">
+                    <span id="message" />
                 </div>
+                <div id="rotating-circle"></div>
             </div>
-        
+        </div>
+
     )
 }
 
