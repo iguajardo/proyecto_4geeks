@@ -10,6 +10,8 @@ const Login = () => {
     const inputPassword = useRef();
     const history = useHistory();
 
+    const lastPath = localStorage.getItem('lastPath') || '/';
+
     const validateUsername = (e) => {
         e.preventDefault();
         if (inputUsername.current.value.trim() === '') {
@@ -28,7 +30,7 @@ const Login = () => {
             } else if (res.status === 200) {
                 inputUsername.current.value = ""
                 inputPassword.current.value = ""
-                history.replace('/perfil')
+                history.replace(lastPath);
             }
         } catch (error) {
             console.error(error);

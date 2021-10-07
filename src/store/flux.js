@@ -131,6 +131,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             Logout: () => {
                 localStorage.removeItem('userToken');
+                localStorage.removeItem('btnSaveStatus');
                 setStore({ token: null, notas: [] })
             },
             changeCalendar: (newEntry) => {
