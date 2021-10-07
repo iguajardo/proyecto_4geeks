@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Context } from "../store/appContext";
+import { useHistory } from 'react-router-dom';
 
 const Register = () => {
     
@@ -10,6 +11,9 @@ const Register = () => {
         email: "",
         user_img:""
     })
+    const history = useHistory();
+
+    
     
     const [isRegister, setIsRegister] = useState({ message: "", status: "" })
     
@@ -24,7 +28,7 @@ const Register = () => {
     },[store.randomUser])
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         let mensaje = ""
         if (!validateUsername(input.nombre_usuario)) {
             mensaje += "El usuario no debe contener caracteres especiales"
@@ -50,9 +54,12 @@ const Register = () => {
                         nombre_usuario: "",
                         password: "",
                         email: ""
+                        
                     })
+                   history.replace('/login')
                 })
                 .catch((error) => console.log(error))
+                
         }
     }
 
@@ -128,8 +135,8 @@ const Register = () => {
                                 />
                             </div>
                             <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <button className="btn btn-primary fw-bold">
-                                    Send
+                                <button className="btn btn-primary fw-bold mt-3" type="submit">
+                                    Registrarse
                                 </button>
                             </div>
                         </form>
