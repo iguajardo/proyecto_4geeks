@@ -7,10 +7,8 @@ import Modal from './Modal'
 
 
 const Notas = () => {
-    const { store, actions, setStore } = useContext(Context);
+    const { store, actions } = useContext(Context);
     const { notas, categorias } = store;
-
-    const [readyToDelete, setReadyToDelete] = useState(true);
 
     return (
         <>

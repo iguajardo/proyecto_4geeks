@@ -1,30 +1,34 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Context } from "../store/appContext";
+import { useHistory } from 'react-router-dom';
 
 const Register = () => {
-    
-    const { store,actions } = useContext(Context);
+
+    const { store, actions } = useContext(Context);
     const [input, setInput] = useState({
         nombre_usuario: "",
         password: "",
         email: "",
-        user_img:""
+        user_img: ""
     })
-    
+
+    const history = useHistory();
     const [isRegister, setIsRegister] = useState({ message: "", status: "" })
-    
+
     useEffect(() => {
-        actions.getProfilePic()
+        if (localStorage.getItem('randomImage') === null) {
+            actions.getProfilePic()
+        }
     }, [])
 
-    useEffect(()=>{
+    useEffect(() => {
         setInput({
-            ...input, user_img:store.randomUser
+            ...input, user_img: store.randomUser
         })
-    },[store.randomUser])
+    }, [store.randomUser])
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         let mensaje = ""
         if (!validateUsername(input.nombre_usuario)) {
             mensaje += "El usuario no debe contener caracteres especiales"
@@ -46,13 +50,17 @@ const Register = () => {
                 .then((response) => response.json())
                 .then((data) => {
                     setIsRegister(data)
-                    setInput({ ...input,
+                    setInput({
+                        ...input,
                         nombre_usuario: "",
                         password: "",
                         email: ""
+
                     })
+                    history.replace('/login')
                 })
                 .catch((error) => console.log(error))
+
         }
     }
 
@@ -96,7 +104,15 @@ const Register = () => {
                                 <label htmlFor="inputUsername" className="form-label fw-bold">
                                     Nombre de Usuario
                                 </label>
-                                <input minLength="3" maxLength="100" required type="text" className="form-control" id="inputUsername" name="nombre_usuario" value={input.nombre_usuario} onChange={handleChange} />
+                                <input
+                                    minLength="3"
+                                    maxLength="100"
+                                    required type="text"
+                                    className="form-control"
+                                    id="inputUsername"
+                                    name="nombre_usuario"
+                                    value={input.nombre_usuario}
+                                    onChange={handleChange} />
                             </div>
                             <div className="col-sm-12 col-md-12 mt-2">
                                 <label htmlFor="email" className="form-label fw-bold">
@@ -128,8 +144,8 @@ const Register = () => {
                                 />
                             </div>
                             <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <button className="btn btn-primary fw-bold">
-                                    Send
+                                <button className="btn btn-primary fw-bold mt-3" type="submit">
+                                    Registrarse
                                 </button>
                             </div>
                         </form>

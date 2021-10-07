@@ -1,12 +1,14 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext } from 'react'
 import { Context } from '../store/appContext'
 import '../styles/boxcolors.css'
 
-export const CategoriaColores = ({ onChange, value }) => {
+export const CategoriaColores = ({ onChange, value, isDisabled, setIsDisabled }) => {
 
     const { store, actions } = useContext(Context)
 
     const handleSave = () => {
+        localStorage.setItem('btnSaveStatus', JSON.stringify(true))
+        setIsDisabled(true)
         actions.saveCalendar()
     }
 
@@ -23,6 +25,8 @@ export const CategoriaColores = ({ onChange, value }) => {
                                 id={categoria}
                                 value={categoria}
                                 onChange={(e) => {
+                                    localStorage.setItem('btnSaveStatus', JSON.stringify(false))
+                                    // setIsDisabled(false)
                                     return value && onChange(e, value)
                                 }}
                                 disabled={value ? false : true}
@@ -43,6 +47,7 @@ export const CategoriaColores = ({ onChange, value }) => {
             <button
                 className="btn btn-primary mt-2 w-100"
                 onClick={handleSave}
+                disabled={isDisabled}
             >
                 Guardar cambios
             </button>
