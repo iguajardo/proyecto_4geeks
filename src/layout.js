@@ -11,6 +11,7 @@ import Perfil from './views/perfil';
 import { PrivateRoute } from './rutas/PrivateRoute';
 import { EjercicioRespiracion } from './views/ejercicioRespiracion';
 import { Grounding } from './views/grounding';
+import { PublicRoute } from './rutas/PublicRoute';
 
 
 const Layout = () => {
@@ -18,11 +19,11 @@ const Layout = () => {
         <BrowserRouter>
             <Navbar />
             <Switch>
-                <Route exact path="/login" component={Login} />
+                <PublicRoute exact path="/login" component={Login} />
                 <Route exact path="/ejercicio-respiracion" component={EjercicioRespiracion} />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/grounding" component={Grounding} />
-                <Route exact path="/register" component={Register} />
+                <PublicRoute exact path="/register" component={Register} />
                 <PrivateRoute path="/perfil" component={Perfil} />
                 <Route component={NotFound} />
             </Switch>
