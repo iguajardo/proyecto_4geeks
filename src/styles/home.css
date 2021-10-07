@@ -12,7 +12,7 @@
     width: 100vw;
     background: rgb(255 255 255 / 90%);
     justify-content: center;
-  }
+}
 
 section{
     min-height: 100vh;
@@ -45,13 +45,13 @@ section{
     border: none;
     background-size: 120% auto;
     background-image: linear-gradient(315deg, #4ecdc4 0%, #c797eb 75%);
-  }
+}
 .panicButton:hover {
     background-position: right center;
-  }
+}
 .panicButton:active {
     top: 2px;
-  }
+}
 
 .homeRow {
     margin: 0;
@@ -75,9 +75,12 @@ section{
 }
 .contenedorRedes {
     font-size: 50px;
+    display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     color: black;
-  }
+}
 .social-icons {
     color: black;
     font-size: 50px;
@@ -90,4 +93,4 @@ section{
 }
 .fab:hover {
     color: blueviolet;
-  }
+}
