@@ -3,29 +3,27 @@ import { Context } from "../store/appContext";
 import { useHistory } from 'react-router-dom';
 
 const Register = () => {
-    
-    const { store,actions } = useContext(Context);
+
+    const { store, actions } = useContext(Context);
     const [input, setInput] = useState({
         nombre_usuario: "",
         password: "",
         email: "",
-        user_img:""
+        user_img: ""
     })
-    const history = useHistory();
 
-    
-    
+    const history = useHistory();
     const [isRegister, setIsRegister] = useState({ message: "", status: "" })
-    
+
     useEffect(() => {
         actions.getProfilePic()
     }, [])
 
-    useEffect(()=>{
+    useEffect(() => {
         setInput({
-            ...input, user_img:store.randomUser
+            ...input, user_img: store.randomUser
         })
-    },[store.randomUser])
+    }, [store.randomUser])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -50,16 +48,17 @@ const Register = () => {
                 .then((response) => response.json())
                 .then((data) => {
                     setIsRegister(data)
-                    setInput({ ...input,
+                    setInput({
+                        ...input,
                         nombre_usuario: "",
                         password: "",
                         email: ""
-                        
+
                     })
-                   history.replace('/login')
+                    history.replace('/login')
                 })
                 .catch((error) => console.log(error))
-                
+
         }
     }
 
@@ -103,7 +102,15 @@ const Register = () => {
                                 <label htmlFor="inputUsername" className="form-label fw-bold">
                                     Nombre de Usuario
                                 </label>
-                                <input minLength="3" maxLength="100" required type="text" className="form-control" id="inputUsername" name="nombre_usuario" value={input.nombre_usuario} onChange={handleChange} />
+                                <input
+                                    minLength="3"
+                                    maxLength="100"
+                                    required type="text"
+                                    className="form-control"
+                                    id="inputUsername"
+                                    name="nombre_usuario"
+                                    value={input.nombre_usuario}
+                                    onChange={handleChange} />
                             </div>
                             <div className="col-sm-12 col-md-12 mt-2">
                                 <label htmlFor="email" className="form-label fw-bold">
