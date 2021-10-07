@@ -20,10 +20,10 @@ const Layout = () => {
             <Navbar />
             <Switch>
                 <PublicRoute exact path="/login" component={Login} />
+                <PublicRoute exact path="/register" component={Register} />
                 <Route exact path="/ejercicio-respiracion" component={EjercicioRespiracion} />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/grounding" component={Grounding} />
-                <PublicRoute exact path="/register" component={Register} />
                 <PrivateRoute path="/perfil" component={Perfil} />
                 <Route component={NotFound} />
             </Switch>
