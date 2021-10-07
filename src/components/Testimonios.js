@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 
 const Testimonios = () => {
     return (
@@ -23,7 +23,7 @@ const Testimonios = () => {
                             <img class="fotoTestimonio" src="https://randomuser.me/api/portraits/women/14.jpg" alt="foto2" />
                             <h4 className="fw-bold mt-4">Testimonial 2</h4>
                             <p className="px-3">
-                            « Conoci la página porque me la recomendó mi psicóloga. Estos ejercicios han sido de gran ayuda cuando siento que la ansiedad me invade. Además puedo llevar un resgistro y mostrarle a ella mis notas en las siguientes sesiones. »
+                            « Conoci la página porque me la recomendó mi psicóloga. Estos ejercicios han sido de gran ayuda cuando siento que la ansiedad me invade. Además puedo llevar un registro y mostrarle a ella mis notas en las siguientes sesiones. »
                             </p>
                         </div>
                         <div className="col-md-4 col-12">

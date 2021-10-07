@@ -23,3 +23,4 @@ const Descripcion = () => {
     )
 }
 export default Descripcion
+

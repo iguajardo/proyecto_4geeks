@@ -1,14 +1,21 @@
-import react from "react";
+import React from "react";
+import logo from '../img/logo.png'
 
 const Redessociales = () => {
     return (
-        <section id="redessociales">
-        <div class="containerb social-icons">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-facebook-f"></i>
+        <div classNameNameName="containerb">
+            <section id="redessociales">
+                <img id="logoGrande" src={logo} />
+                <h3 classNameName="mt-3"> « Este debiese ser un slogan » </h3>
+                <div className="social-icons mt-3">
+                    <i className="fab fa-facebook-f iconsSize"></i>
+                    <i className="fab fa-instagram iconsSize"></i>
+                    <i className="fab fa-twitter iconsSize"></i>
+                </div>
+
+
+            </section>
         </div>
-    </section>
     )
 }
 
