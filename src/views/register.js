@@ -16,7 +16,9 @@ const Register = () => {
     const [isRegister, setIsRegister] = useState({ message: "", status: "" })
 
     useEffect(() => {
-        actions.getProfilePic()
+        if (localStorage.getItem('randomImage') === null) {
+            actions.getProfilePic()
+        }
     }, [])
 
     useEffect(() => {

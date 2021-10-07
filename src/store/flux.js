@@ -148,6 +148,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 const response = await fetch(`${store.apiUserPic}`);
                 const data = await response.json()
                 setStore({ randomUser: data.results[0].picture.large })
+                localStorage.setItem('randomImage', data.results[0].picture.large)
             },
             saveCalendar: async () => {
                 const store = getStore();
