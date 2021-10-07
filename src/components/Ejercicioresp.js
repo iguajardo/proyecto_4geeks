@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import '../styles/ejercicioresp.css'
 import cycle from '../js/beatheanim'
 import pause from '../js/pause'
@@ -12,7 +12,7 @@ export const EjercicioResp = (props) => {
         await pause(2000)
         cycle();
         let control = 0;
-        const ciclo = setInterval(() => {
+        let ciclo = setInterval(() => {
             control++
             if (control > 2) {
                 setCycling(false)

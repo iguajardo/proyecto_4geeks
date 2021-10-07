@@ -4,7 +4,7 @@ import '../styles/modal.css'
 
 
 const Modal = () => {
-    const { store, actions, setStore } = useContext(Context);
+    const { store, actions } = useContext(Context);
     const { postNota } = actions;
     const [note, setNote] = useState({
         titulo: "",
