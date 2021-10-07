@@ -1,10 +1,10 @@
+import pause from '../js/pause'
+
 const cycle = async () => {
     const circle = document.getElementById("inner-circle");
     const message = document.getElementById("message");
     const rotatingPoint = document.getElementById("rotating-circle");
-    const pause = (time) => {
-        return new Promise((resolve) => setTimeout(resolve, time));
-    };
+    
     circle.className = 'breathe-in';
     message.innerHTML = 'Inhala';
     rotatingPoint.style.animationDuration = '3800ms';

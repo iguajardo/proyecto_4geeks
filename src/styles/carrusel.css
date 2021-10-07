@@ -9,9 +9,19 @@ img{
 
 h3{
     margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
 }
 
-p{
+.card-text{
     text-align: center;
     margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.carousel-item{
+    height: 520px;
+    align-items: center;
+}
+.carousel-item-next, .carousel-item-prev, .carousel-item.active{
+    display: flex !important;
 }
