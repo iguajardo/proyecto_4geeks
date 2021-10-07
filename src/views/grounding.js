@@ -32,8 +32,8 @@ export const Grounding = () => {
                                     <div className="card-body">
                                         <h4 className="text-center text-dark"> Bienvenido al ejercicio Pies en la Tierra</h4>
                                         <p className="card-text">
-                                        Este ejercicio te ayudara a mantenerte "en el momento" cuando tu mente y cuerpo quieran 
-                                        regresar a momentos de trauma o estres.<br/> Asi que, ve a un lugar tranqnuilo y sigue nuestras instrucciones.
+                                            Este ejercicio te ayudara a mantenerte "en el momento" cuando tu mente y cuerpo quieran
+                                            regresar a momentos de trauma o estres.<br /> Asi que, ve a un lugar tranquilo y sigue nuestras instrucciones.
                                         </p>
                                         <p class="card-text text-end"><small class="text-muted">Haz click aqui para continuar ➜</small></p>
                                     </div>
@@ -68,7 +68,7 @@ export const Grounding = () => {
                                     <div className="card-body pasos">
                                         <h3 className="text-center text-dark">Identifica 4 cosas que puedas escuchar</h3>
                                         <p className="card-text">
-                                            Cierra los ojos, presta atencion a los sonidos a tu alrededor y trata de identificar 4 de ellos.
+                                            Cierra los ojos, presta atención a los sonidos a tu alrededor y trata de identificar 4 de ellos.
                                         </p>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@ export const Grounding = () => {
                                     <div className="card-body pasos">
                                         <h3 className="text-center text-dark">Identifica 1 cosas que puedas saborear</h3>
                                         <p className="card-text">
-                                            Por ultimo, distingue un sabor y detallalo. 
+                                            Por último, distingue un sabor y detállalo.
                                         </p>
                                     </div>
                                 </div>
@@ -137,8 +137,8 @@ export const Grounding = () => {
                                         <h3 className="text-center text-dark">Lo Lograste!!</h3>
                                         <p className="card-text">
                                             Felicidades por entregarte a este espacio de cuidado, esperamos que te haya servido para centrar tu mente en el presente.
-                                             Si lo deseas, puedes volver a nuestro ejercicio de respiracion para culmunar.<br/>
-                                             Vuelve cuando nos necesites.
+                                            Si lo deseas, puedes volver a nuestro ejercicio de respiracion para finalizar.<br />
+                                            Vuelve cuando nos necesites.
 
                                         </p>
                                     </div>
