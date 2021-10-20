@@ -36,16 +36,16 @@ const Navbar = () => {
                                 location.pathname === "/" ? (
                                     <>
                                         <li className="nav-item">
-                                            <a className="me-2 nav-link" href="#portada">Inicio</a>
+                                            <a className="navegacion ms-2 nav-link" href="#portada">Inicio</a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="me-2 nav-link" href="#descripcion1">Descripción</a>
+                                            <a className="navegacion ms-2 nav-link" href="#descripcion1">Descripción</a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="me-2 nav-link" href="#testimonios">Testimonios</a>
+                                            <a className="navegacion ms-2 nav-link" href="#testimonios">Testimonios</a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="me-2 nav-link" href="#redessociales">Contacto</a>
+                                            <a className="navegacion ms-2 nav-link" href="#redessociales">Contacto</a>
                                         </li>
                                     </>
                                 ) : (
@@ -53,7 +53,7 @@ const Navbar = () => {
                                 )
                             }
                             <li className="nav-item">
-                                <NavLink className="nav-link" aria-current="page" to="/ejercicio-respiracion">
+                                <NavLink className="navegacion ms-2 mb-0 nav-link" aria-current="page" to="/ejercicio-respiracion">
                                     Ejercicios
                                 </NavLink>
                             </li>
@@ -74,13 +74,6 @@ const Navbar = () => {
                                 </div>
                             ) : (
                                 <div className="btn-group">
-                                    <button type="button" className="btn btn-light">
-                                        <NavLink className="btn_perfil nav-link d-flex" to="/perfil">
-                                            <span className="mx-3 username-nav">{store.nombre_usuario}</span>
-                                            <div className="imagen rounded-circle" style={{ backgroundImage: `url(${user_img})`, width: "30px", height: "30px", backgroundPosition: "center", backgroundSize: "cover" }}>
-                                            </div>
-                                        </NavLink>
-                                    </button>
                                     <button
                                         type="button"
                                         className="btn btn-light dropdown-toggle dropdown-toggle-split"
@@ -89,7 +82,7 @@ const Navbar = () => {
                                     >
                                         <span className="visually-hidden">Toggle Dropdown</span>
                                     </button>
-                                    <ul className="dropdown-menu dropdown-menu-end">
+                                    <ul className="dropdown-menu dropdown-menu-start">
                                         <li>
                                             <button className="dropdown-item" onClick={actions.Logout}>
                                                 Cerrar Sesión
@@ -97,6 +90,13 @@ const Navbar = () => {
                                         </li>
 
                                     </ul>
+                                    <button type="button" className="btn btn-light ps-0">
+                                        <NavLink className="btn_perfil nav-link d-flex " to="/perfil">
+                                            <span className="me-3 username-nav">{store.nombre_usuario}</span>
+                                            <div className="imagen rounded-circle" style={{ backgroundImage: `url(${user_img})`, width: "30px", height: "30px", backgroundPosition: "center", backgroundSize: "cover" }}>
+                                            </div>
+                                        </NavLink>
+                                    </button>
                                 </div>
                             )
 

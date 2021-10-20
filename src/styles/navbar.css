@@ -18,11 +18,15 @@
     .left-side{
         display:flex
     }
-    .username-nav{
-        display:none;
-    }
+    
+    
 }
 
 .nav-principal{
     border-bottom: 2px solid #65CBF8;
 }
+
+.navegacion{
+    text-align: start;
+}
+
