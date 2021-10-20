@@ -3,7 +3,7 @@ import React from "react";
 const Testimonios = () => {
     return (
         <section id="testimonios">
-            <div className="row py-5" id="testi">
+            <div className="row" id="testi">
                 <div className="containerb text-center">
                     <div className="row">
                         <h1 className="fw-bold">Testimonios</h1>

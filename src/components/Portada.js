@@ -9,7 +9,7 @@ const Portada = () => {
         <section id="portada">
             <div className="row">
                 <div className="containerb">
-                    <div className="row py-5">
+                    <div className="row">
                     <div className="titlePortada col-md-6 col-12">
                             <h1>Bienvenido a Serenity</h1>
                             <h2>Te ayudamos a disminuir tus niveles de ansiedad.</h2>

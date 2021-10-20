@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
-import { NavLink, withRouter, Link } from 'react-router-dom';
+import { NavLink, withRouter, Link, useLocation } from 'react-router-dom';
 import '../styles/navbar.css';
 import logo from '../img/logo-s.png'
 
@@ -8,11 +8,12 @@ import logo from '../img/logo-s.png'
 const Navbar = () => {
     const { store, actions } = useContext(Context);
     const { token, user_img } = store;
+    const location = useLocation();
 
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light nav-principal">
                 <div className="container-fluid">
                     <img className="logo" src={logo} />
                     <Link className="navbar-brand" to="/">
@@ -31,17 +32,31 @@ const Navbar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <NavLink exact className="nav-link" aria-current="page" to="/">
-                                    Home
-                                </NavLink>
-                            </li>
+                            {
+                                location.pathname === "/" ? (
+                                    <>
+                                        <li className="nav-item">
+                                            <a className="me-2 nav-link" href="#portada">Inicio</a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a className="me-2 nav-link" href="#descripcion1">Descripción</a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a className="me-2 nav-link" href="#testimonios">Testimonios</a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a className="me-2 nav-link" href="#redessociales">Contacto</a>
+                                        </li>
+                                    </>
+                                ) : (
+                                    ""
+                                )
+                            }
                             <li className="nav-item">
                                 <NavLink className="nav-link" aria-current="page" to="/ejercicio-respiracion">
-                                    Ejercicio
+                                    Ejercicios
                                 </NavLink>
                             </li>
-
                         </ul>
                         {
                             token === null ? (
@@ -61,7 +76,7 @@ const Navbar = () => {
                                 <div className="btn-group">
                                     <button type="button" className="btn btn-light">
                                         <NavLink className="btn_perfil nav-link d-flex" to="/perfil">
-                                            <span className="mx-3">{store.nombre_usuario}</span>
+                                            <span className="mx-3 username-nav">{store.nombre_usuario}</span>
                                             <div className="imagen rounded-circle" style={{ backgroundImage: `url(${user_img})`, width: "30px", height: "30px", backgroundPosition: "center", backgroundSize: "cover" }}>
                                             </div>
                                         </NavLink>
@@ -86,13 +101,41 @@ const Navbar = () => {
                             )
 
                         }
-
                     </div>
                 </div>
             </nav>
-
         </>
     )
 }
 
 export default withRouter(Navbar);
+
+
+
+{/* <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light nav-principal">
+                <div className="container-fluid">
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarTogglerDemo02"
+                        aria-controls="navbarTogglerDemo02"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                        >
+                        <span className="navbar-toggler-icon" />
+                    </button> 
+
+                    <div className="left-side collapse navbar-collapse d-sm-flex align-items-center" id="navbarTogglerDemo02">
+                        <img className="logo" src={logo} />
+                        <Link className="navbar-brand" to="/">
+                            Serenity
+                        </Link>
+                        <ul className="navbar-nav d-xs-flex flex-row me-auto mb-lg-0">
+                            <li className="nav-item ms-2">
+                                <NavLink className="nav-link" aria-current="page" to="/ejercicio-respiracion">
+                                    Ejercicios
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </div> */}
