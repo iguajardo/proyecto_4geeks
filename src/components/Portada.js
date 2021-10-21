@@ -7,8 +7,8 @@ const Portada = () => {
     return (
 
         <section id="portada">
-            <div className="row">
-                <div className="containerb">
+            
+                <div className="container">
                     <div className="row">
                     <div className="titlePortada col-md-6 col-12">
                             <h1>Bienvenido a Serenity</h1>
@@ -26,7 +26,7 @@ const Portada = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </section>
 
 

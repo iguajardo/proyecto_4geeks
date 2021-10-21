@@ -4,8 +4,8 @@ import joyride from "../img/joyride.svg"
 const Descripcion = () => {
     return (
         <section id="descripcion1">
-            <div className="row" id="desc1">
-                <div className="containerb">
+            
+                <div className="container">
                     <div className="row py-5">
                         <div className="col-md-6 col-12 d-flex justify-content-center">
                             <img src={joyride} className="d-flex" alt="" />
@@ -18,7 +18,7 @@ const Descripcion = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+           
         </section>
     )
 }

@@ -1,6 +1,4 @@
-.containerb {
-    max-width: 1100px;
-}
+
 
 .secNav {
     color: white;
@@ -105,4 +103,16 @@ section{
 }
 .fab:hover {
     color: blueviolet;
+}
+
+@media (max-width: 768px){
+    .titlePortada{
+        text-align: center;
+        align-content: center;
+        
+    }
+    .panicButton{
+        margin-bottom: 20px;
+    }
+    
 }
