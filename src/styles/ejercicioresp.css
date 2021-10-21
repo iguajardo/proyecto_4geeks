@@ -188,10 +188,12 @@
     text-align: center;
     align-content: center;
   }
-
   .textoejerc h2{
     width: 410px;
     margin: auto;
+  }
+  .img_fondo{
+    display:none;
   }
   
 }
