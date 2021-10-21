@@ -217,6 +217,16 @@
 }
 
 @media (max-width: 576px){
+
+  .contenedorrespiracion{
+    position: relative;
+    width: 360px;
+    height: 360px;
+  }
+  .textoejerc h2{
+    width: 280px;
+    margin: auto;
+  }
   .container_ejercicio {
     height: 350px;
     width: 350px;
@@ -284,6 +294,15 @@
   .container_ejercicio .outer-circle #inner-circle.hold-it {
     height: 200px;
     width: 200px;
+  }
+  .replypopup{
+    position: absolute;
+    width: 355px;
+    height: 355px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0, 0.5);
   }
 }
 
