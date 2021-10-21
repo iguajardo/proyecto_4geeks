@@ -109,10 +109,16 @@ section{
     .titlePortada{
         text-align: center;
         align-content: center;
+        margin-top:10px;
         
     }
     .panicButton{
         margin-bottom: 20px;
+    }
+    #descripcion1{
+        text-align: center;
+        align-content: center;
+        padding-right: 0;
     }
     
 }
