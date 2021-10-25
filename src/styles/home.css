@@ -106,11 +106,16 @@ section{
 }
 
 @media (max-width: 768px){
-    .titlePortada{
+    .titlePortada h1{
         text-align: center;
         align-content: center;
-        margin-top:10px;
-        
+        margin-top:20px;
+        margin-bottom: 20px;
+    }
+    .titlePortada{
+        text-align: left;
+        align-content: center;
+
     }
     .panicButton{
         margin-bottom: 20px;
