@@ -71,6 +71,7 @@
 .img_fondo{
   display: flex;
     justify-content: center;
+    padding-top:20px;
 }
 
 .textoejerc{
@@ -109,6 +110,7 @@
  .instrucciones{
    padding-left: 1rem;
    list-style-type: none;
+   line-height: 30px;
  }
  .instrucciones li::before {
   content: "■";  
@@ -117,7 +119,7 @@
   font-size: 10px;
   display: inline-block; 
   width: 1.5em; 
-  margin-left: -1em; 
+  margin-left: -1em;
 }
 
 .contenedorrespiracion{
@@ -203,13 +205,14 @@
   .ejercicio_der{
     align-items: center;
   }
-  .textoejerc{
+  .textoejerc ul{
+    text-align: left;
+  }
+  
+  .textoejerc h2{
     padding-top:20px;
     text-align: center;
     align-content: center;
-  }
-
-  .textoejerc h2{
     width: 390px;
     margin: auto;
   }
@@ -224,7 +227,7 @@
     height: 360px;
   }
   .textoejerc h2{
-    width: 280px;
+    width: 207px;
     margin: auto;
   }
   .container_ejercicio {

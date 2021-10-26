@@ -32,10 +32,9 @@ export const Grounding = () => {
                                     <div className="card-body">
                                         <h4 className="text-center text-dark"> Bienvenido al ejercicio Pies en la Tierra</h4>
                                         <p className="card-text">
-                                            Este ejercicio te ayudara a mantenerte "en el momento" cuando tu mente y cuerpo quieran
-                                            regresar a momentos de trauma o estres.<br /> Asi que, ve a un lugar tranquilo y sigue nuestras instrucciones.
+                                        Este ejercicio te ayudará a mantenerte “en el momento” cuando tu mente y cuerpo quieran regresar a momentos de trauma o estrés.<br /> Así que, ve a un lugar tranquilo y sigue nuestras instrucciones.
                                         </p>
-                                        <p class="card-text text-end"><small class="text-muted">Haz click aqui para continuar ➜</small></p>
+                                        <p class="card-text text-end"><small class="text-muted">Haz clic aquí para continuar ➜</small></p>
                                     </div>
                                 </div>
                             </div>
@@ -149,17 +148,17 @@ export const Grounding = () => {
 
                 </div>
                 <div className="row justify-content-center m-3">
-                    <button className="btn btn-light col-md-2 m-2" type="button" data-bs-slide-to="1" data-bs-target="#carouselExampleFade">
-                        <i className="fas fa-redo-alt p-0 text-primary"></i>
+                    <button className="btn btn_next btn-9 custom-btn  col-md-2 m-2" type="button" data-bs-slide-to="1" data-bs-target="#carouselExampleFade" style={{width:"140px",height:"auto"}}>
+                        <i className="fas fa-redo-alt p-0 text-light"></i>
                     </button>
-                    <button className="btn btn-light col-md-2 m-2">
-                        <NavLink className="btn_perfil nav-link" to="/ejercicio-respiracion">
+                    <button className="btn btn_next btn-9 custom-btn  col-md-2 m-2 "style={{width:"140px",height:"auto"}}>
+                        <NavLink className="btn_perfil nav-link text-light" to="/ejercicio-respiracion">
                             Ejercicio de Respiración
                         </NavLink>
                     </button>
-                    <button className="btn btn-light col-md-2 m-2">
-                        <NavLink className="btn_perfil nav-link" to="/">
-                            Me siento mejor!
+                    <button className="btn btn_next btn-9 custom-btn  col-md-2 m-2" style={{width:"140px",height:"auto"}}>
+                        <NavLink className="btn_perfil text-light nav-link" to="/">
+                            ¡Me siento mejor!
                         </NavLink>
                     </button>
                 </div>

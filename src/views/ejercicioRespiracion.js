@@ -12,7 +12,7 @@ export const EjercicioRespiracion = () => {
     return (
         <div className="container">
             <div className="row ">
-                <div className="col-md-12 col-lg-6  textoejerc my-3">
+                <div className="col-md-12 col-lg-6  textoejerc my-4">
                     <h2 className=" mb-4">Ejercicio de Relajación 4,7,8</h2>
                     <p>Estos son los tres pasos más importantes del ejercicio:</p>
                     <ul className="instrucciones">
@@ -24,7 +24,7 @@ export const EjercicioRespiracion = () => {
                     <img src={resp} className="d-flex " alt="" style={{width:"250px", }} />
                     </div>
                 </div>
-                <div className="ejercicio_der col-md-12 col-lg-6 d-flex my-3 flex-column">
+                <div className="ejercicio_der col-md-12 col-lg-6 d-flex my-4 flex-column">
                     <div className="contenedorrespiracion">
                         <EjercicioResp breathe={breathe} setCycling={setCycling} />
                         {!cycling && (

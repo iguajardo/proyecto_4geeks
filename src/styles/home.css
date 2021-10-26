@@ -1,4 +1,6 @@
-
+#root{
+    width: 100vw;
+}
 
 .secNav {
     color: white;
@@ -125,5 +127,8 @@ section{
         align-content: center;
         padding-right: 0;
     }
-    
+}
+
+.footer{
+    position: relative;
 }
