@@ -322,8 +322,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-   background-color: #1fd1f9;
-background-image: linear-gradient(315deg, #1fd1f9 0%, #0fb2b8 74%);
+  background-image: linear-gradient(315deg, #1fd1f9 0%, #13add3 74%);
   transition: all 0.3s ease;
 }
 .btn-9:hover {

@@ -53,7 +53,7 @@ const Navbar = () => {
                                 )
                             }
                             <li className="nav-item">
-                                <NavLink className="navegacion ms-2 mb-0 nav-link" aria-current="page" to="/ejercicio-respiracion">
+                                <NavLink className="navegacion ms-2 mb-0 nav-link" aria-current="page" to="/ejercicios">
                                     Ejercicios
                                 </NavLink>
                             </li>

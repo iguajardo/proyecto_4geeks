@@ -1,0 +1,24 @@
+.grupo_ejercicios{
+    display: flex;
+    justify-content: center;
+    margin:auto;
+}
+
+.card_ejercicios{
+    top:50px;
+    width: 300px;
+    height: 250px;
+    
+}
+
+.card-title{
+    text-align: center;
+}
+.card-text{
+    text-align: left;
+}
+
+.card-footer{
+    display:flex;
+    justify-content: center;
+}

@@ -1,5 +1,12 @@
 #root{
     width: 100vw;
+   
+}
+
+body{
+    padding-bottom: 30px;
+    height: 100vh;
+    
 }
 
 .secNav {
@@ -129,6 +136,3 @@ section{
     }
 }
 
-.footer{
-    position: relative;
-}

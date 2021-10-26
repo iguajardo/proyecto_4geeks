@@ -34,7 +34,7 @@ export const Grounding = () => {
                                         <p className="card-text">
                                         Este ejercicio te ayudará a mantenerte “en el momento” cuando tu mente y cuerpo quieran regresar a momentos de trauma o estrés.<br /> Así que, ve a un lugar tranquilo y sigue nuestras instrucciones.
                                         </p>
-                                        <p class="card-text text-end"><small class="text-muted">Haz clic aquí para continuar ➜</small></p>
+                                        <p class="card-text text-end"><small class="text-muted">Haz click aquí para continuar ➜</small></p>
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,50 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+import '../styles/ejercicios.css'
 
-const Ejercicios=()=>{
-    
-    return()
+
+export const Ejercicios = () => {
+
+    return (
+        <div className="container-fluid grupo_ejercicios">
+            <div className="row gx-5">
+                <div className="col-sm-6">
+                    <div className="card card_ejercicios">
+                        <div className="card-body">
+                            <h5 className="card-title">Ejercicio de respiracion 4,7,8</h5>
+                            <p className="card-text">
+                            Técnica para ayudar a calmar el estrés y conciliar el sueño
+                            </p>
+                        </div>
+                        <div className="card-footer">
+                        <button className="btn btn_next btn-9 custom-btn" >
+                                <NavLink className="boton_next text-light nav-link" to="/ejercicio-respiracion">
+                                    Empieza
+                                </NavLink>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-6">
+                    <div className="card card_ejercicios">
+                        <div className="card-body">
+                            <h5 className="card-title">Pies en la Tierra</h5>
+                            <p className="card-text">
+                                With supporting text below as a natural lead-in to additional content.
+                            </p>
+
+                        </div>
+                        <div className="card-footer">
+                            <button className="btn btn_next btn-9 custom-btn" >
+                                <NavLink className="boton_next text-light nav-link" to="/grounding">
+                                    Empieza
+                                </NavLink>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
 }
+
