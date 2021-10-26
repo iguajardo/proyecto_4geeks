@@ -90,7 +90,7 @@ const Navbar = () => {
                                         </li>
 
                                     </ul>
-                                    <button type="button" className="btn btn-light ps-0">
+                                    <button type="button" className="btn btn-light ps-0 pe-4">
                                         <NavLink className="btn_perfil nav-link d-flex " to="/perfil">
                                             <span className="me-3 username-nav">{store.nombre_usuario}</span>
                                             <div className="imagen rounded-circle" style={{ backgroundImage: `url(${user_img})`, width: "30px", height: "30px", backgroundPosition: "center", backgroundSize: "cover" }}>
