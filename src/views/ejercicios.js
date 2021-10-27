@@ -30,7 +30,7 @@ export const Ejercicios = () => {
                         <div className="card-body">
                             <h5 className="card-title">Pies en la Tierra</h5>
                             <p className="card-text">
-                                With supporting text below as a natural lead-in to additional content.
+                                Ejercicio para ayudarte a conectarte con tu cuerpo y con el presente.
                             </p>
 
                         </div>

@@ -54,12 +54,12 @@
   transition: width 5s, height 5s;
 }
 .container_ejercicio .outer-circle #inner-circle.breathe-in {
-  transition: width 5s, height 5s, transition-timing-function ease-out;
+  transition: width 4s, height 4s, transition-timing-function ease-out;
   height: 250px;
   width: 250px;
 }
 .container_ejercicio .outer-circle #inner-circle.breathe-out {
-  transition: width 5s, height 5s, transition-timing-function ease-out;
+  transition: width 8s, height 8s, transition-timing-function ease-out;
   height: 150px;
   width: 150px;
 }
