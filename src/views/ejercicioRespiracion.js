@@ -36,12 +36,12 @@ export const EjercicioRespiracion = () => {
                         )}
                     </div>
                     <div className="row justify-content-center flex-nowrap m-3">
-                        <button className="btn btn_next btn-9 custom-btn  m-2 ">
+                        <button className="btn btn_next btn-9 custom-btn  m-2" style={{width:"140px",height:"auto"}}>
                             <NavLink className="boton_next nav-link text-light" to="/grounding">
                                 Siguiente ejercicio
                             </NavLink>
                         </button>
-                        <button className="btn btn_end btn-9 custom-btn  m-2">
+                        <button className="btn btn_end btn-9 custom-btn  m-2" style={{width:"140px",height:"auto"}}>
                             <NavLink className=" boton_end nav-link text-light" to="/">
                                 Salir
                             </NavLink>

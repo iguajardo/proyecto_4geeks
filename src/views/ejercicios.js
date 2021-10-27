@@ -13,15 +13,15 @@ export const Ejercicios = () => {
                         <div className="card-body">
                             <h5 className="card-title">Ejercicio de respiracion 4,7,8</h5>
                             <p className="card-text">
-                            Técnica para ayudar a calmar el estrés y conciliar el sueño
+                                Técnica para ayudar a calmar el estrés y conciliar el sueño
                             </p>
                         </div>
                         <div className="card-footer">
-                        <button className="btn btn_next btn-9 custom-btn" >
-                                <NavLink className="boton_next text-light nav-link" to="/ejercicio-respiracion">
+                            <NavLink className="boton_next text-light nav-link" to="/ejercicio-respiracion">
+                                <button className="btn btn_next btn-9 custom-btn" >
                                     Empieza
-                                </NavLink>
-                            </button>
+                                </button>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
@@ -35,11 +35,11 @@ export const Ejercicios = () => {
 
                         </div>
                         <div className="card-footer">
-                            <button className="btn btn_next btn-9 custom-btn" >
                                 <NavLink className="boton_next text-light nav-link" to="/grounding">
+                            <button className="btn btn_next btn-9 custom-btn" >
                                     Empieza
-                                </NavLink>
                             </button>
+                                </NavLink>
                         </div>
                     </div>
                 </div>
