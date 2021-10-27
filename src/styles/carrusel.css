@@ -33,3 +33,32 @@ h3{
 .pointer{
     cursor: pointer;
 }
+.imagen{
+    padding-right: 40px;
+}
+.containerCarrusel{
+    margin-top:20px;
+}
+@media (max-width: 576px){ 
+    .containerCarrusel{
+        position: relative;
+        top:30px;
+        
+    }
+    .pasos{
+        padding: 5px 5px 5px 0; 
+    }
+    .imagen{
+        margin: 0;
+    }
+    .card-text{
+        margin-top: 15px;
+    }
+    .custom-btn{
+        padding: 0 10px;
+    }
+    #root{
+        height: 100%;
+    }
+}
+    

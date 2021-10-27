@@ -26,10 +26,10 @@ export const Grounding = () => {
         const botonNext = document.getElementsByClassName('carousel-control-next')[0]
         
         if (carruselFirstSlide.classList.contains('active')) {
-            // Hide left arrow
+            
             botonPrev.classList.add('d-none')
         } else if (carruselLastSlide.classList.contains('active')) {
-            // Hide right arrow
+            
             botonNext.classList.add('d-none')
         } else {
             botonPrev.classList.remove('d-none');
@@ -40,7 +40,7 @@ export const Grounding = () => {
 
 
     return (
-        <div className="container mt-5">
+        <div className="containerCarrusel container">
             <div
                 id="carouselExampleFade"
                 className="carousel slide "
@@ -155,18 +155,17 @@ export const Grounding = () => {
                     <div className="carousel-item">
                         <div className="mb-3 bg-transparent" >
                             <div className="row g-0 justify-content-center">
-                                <div className="col-md-5 d-flex flex-row-reverse me-5">
+                                <div className="imagen col-md-5 d-flex flex-row-reverse ">
                                     <img src={congrats} className="d-flex" alt="" />
                                 </div>
-                                <div className="col-md-3 d-flex flex-column align-items-center">
+                                <div className="col-md-4 d-flex flex-column align-items-center">
                                     <div className="card-body pasos">
-                                        <h3 className="text-center text-dark">Lo Lograste!!</h3>
+                                        <h2 className="text-center text-dark">¡¡Lo Lograste!!</h2>
                                         <p className="card-text">
                                             Felicidades por entregarte a este espacio de cuidado, esperamos que te haya servido para centrar tu mente en el presente.
                                             Si lo deseas, puedes volver a nuestro ejercicio de respiración para finalizar.<br />
                                             Vuelve cuando nos necesites.
                                         </p>
-                                    </div>
                                 <div className=" d-flex justify-content-center m-3">
                                     <button className="btn btn_next btn-9 custom-btn  col-md-2 m-2" type="button" data-bs-slide-to="1" data-bs-target="#carouselExampleFade" style={{ width: "140px", height: "auto" }}>
                                         Repetir Ejercicio
@@ -182,6 +181,7 @@ export const Grounding = () => {
                                         </NavLink>
                                     </button>
                                 </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
