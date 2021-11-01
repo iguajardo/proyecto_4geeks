@@ -7,9 +7,9 @@ const SectionBar = () => {
             <nav className="secNav">
 
                 <a className="me-2" href="#portada">Inicio</a>
-                <a className="me-2" href="#descripcion1">Descripción</a>
+                <a className="me-2" href="#descripcion">Descripción</a>
                 <a className="me-2" href="#testimonios">Testimonios</a>
-                <a className="me-2" href="#redessociales">Contacto</a>
+                <a className="me-2" href="#redesSociales">Contacto</a>
 
             </nav>
         </div>

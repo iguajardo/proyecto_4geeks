@@ -2,15 +2,22 @@ import React from "react";
 
 const Testimonios = () => {
     return (
-        <section id="testimonios">
-            <div className="row py-5" id="testi">
-                <div className="containerb text-center">
+        <section className="flex-container" id="testimonios">
+
+            
+
+<div className="item2">
                     <div className="row">
-                        <h1 className="fw-bold">Testimonios</h1>
-                        <h5 className="mb-5">
+                        <h1 className="titulo fw-bold">Testimonios</h1>
+                        <h5 className="subtitulo mb-5">
                             Ayudar a las personas a disminuir sus niveles de ansiedad es nuestra misión. Sus comentarios positivos nos motivan a seguir mejorando. Los usuarios de Serenity nos recomiendan.
                         </h5>
                     </div>
+                    </div>
+
+
+
+                    <div className="item2">
                     <div className="row">
                         <div className="col-md-4 col-12">
                             <img className="fotoTestimonio" src="https://randomuser.me/api/portraits/men/75.jpg" alt="foto1" />
@@ -37,8 +44,9 @@ const Testimonios = () => {
                             </p>
                         </div>
                     </div>
-                </div>
-            </div>
+                    </div>
+           
+
         </section>
     )
 }
