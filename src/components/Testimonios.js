@@ -3,8 +3,8 @@ import React from "react";
 const Testimonios = () => {
     return (
         <section id="testimonios">
-            <div className="row py-5" id="testi">
-                <div className="containerb text-center">
+            
+                <div className="container text-center">
                     <div className="row">
                         <h1 className="fw-bold">Testimonios</h1>
                         <h5 className="mb-5">
@@ -38,7 +38,7 @@ const Testimonios = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </section>
     )
 }

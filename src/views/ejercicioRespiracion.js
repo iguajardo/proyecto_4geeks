@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { EjercicioResp } from '../components/Ejercicioresp'
 import { NavLink } from 'react-router-dom';
+import resp from '../img/resp.svg'
 
 
 export const EjercicioRespiracion = () => {
@@ -11,7 +12,7 @@ export const EjercicioRespiracion = () => {
     return (
         <div className="container">
             <div className="row ">
-                <div className="col-md-12 col-lg-6  text-start textoejerc my-3">
+                <div className="col-md-12 col-lg-6  textoejerc my-4">
                     <h2 className=" mb-4">Ejercicio de Relajación 4,7,8</h2>
                     <p>Estos son los tres pasos más importantes del ejercicio:</p>
                     <ul className="instrucciones">
@@ -19,8 +20,11 @@ export const EjercicioRespiracion = () => {
                         <li>Aguanta la respiración durante siete segundos.</li>
                         <li>Exhala completamente el aire de tus pulmones durante ocho segundos.</li>
                     </ul>
+                    <div className="img_fondo">
+                    <img src={resp} className="d-flex " alt="" style={{width:"250px", }} />
+                    </div>
                 </div>
-                <div className="col-md-12 col-lg-6 d-flex justify-content-center my-3 flex-column">
+                <div className="ejercicio_der col-md-12 col-lg-6 d-flex my-4 flex-column">
                     <div className="contenedorrespiracion">
                         <EjercicioResp breathe={breathe} setCycling={setCycling} />
                         {!cycling && (
@@ -31,15 +35,15 @@ export const EjercicioRespiracion = () => {
                             </div>
                         )}
                     </div>
-                    <div className="row justify-content-center m-3">
-                        <button className="btn btn-light col-md-2 m-2 ">
-                            <NavLink className="btn_perfil nav-link" to="/grounding">
+                    <div className="row justify-content-center flex-nowrap m-3">
+                        <button className="btn btn_next btn-9 custom-btn  m-2" style={{width:"140px",height:"auto"}}>
+                            <NavLink className="boton_next nav-link text-light" to="/grounding">
                                 Siguiente ejercicio
                             </NavLink>
                         </button>
-                        <button className="btn btn-light col-md-2 m-2">
-                            <NavLink className="btn_perfil nav-link" to="/">
-                                Me siento mejor!
+                        <button className="btn btn_end btn-9 custom-btn  m-2" style={{width:"140px",height:"auto"}}>
+                            <NavLink className=" boton_end nav-link text-light" to="/">
+                                Salir
                             </NavLink>
                         </button>
                     </div>
