@@ -1,53 +1,48 @@
 #root{
-    width: 100vw;
-   
+  width: 100vw;
 }
 
 body{
-    padding-bottom: 30px;
-    height: 100vh;
-    
+  padding-bottom: 30px;
+  height: 100vh;
+  
 }
 
 .secNav {
-    color: white;
-    z-index: 10;
-    position: fixed;
-    font-size: 14px;
-    letter-spacing: 3px;
-    padding: 25px;
-    width: 100vw;
-    background: rgb(255 255 255 / 90%);
-    justify-content: center;
+  color: white;
+  z-index: 10;
+  position: fixed;
+  font-size: 14px;
+  letter-spacing: 3px;
+  padding: 25px;
+  width: 100vw;
+  background: rgb(255 255 255 / 90%);
+  justify-content: center;
 }
 
 @media (max-width: 768px) { 
-    .secNav{
-        display:none;
-    }
+  .secNav{
+      display:none;
+  }
 }
 
 section{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-.fotoTestimonio {
-    border-radius: 50%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-#arbol {
-  max-width: 100%;
+.titlePortada {
+  color: #3F3D56;
+  font-size: 25px;
+  
+  /* position: absolute; posicionar por sobre el elemento que lo contiene relative 
+  transform: translateY(-50%); cambiando punto de referencia */
 }
-#rideimg {
-  max-width: 100%;
-}
-#logoSerenity {
-  max-width: 100%;
-}
-.boton {
+
+.panicButton {
   min-width: 230px;
   height: 80px;
   color: #fff;
@@ -63,67 +58,99 @@ section{
   background-size: 120% auto;
   background-image: linear-gradient(315deg, #4ecdc4 0%, #c797eb 75%);
 }
-
-.boton:hover {
+.panicButton .nav-link{
+  color: #fff;
+}
+.panicButton:hover {
   background-position: right center;
 }
-.boton:active {
+.panicButton:active {
   top: 2px;
 }
-.secNav {
-  color: white;
-  z-index: 10;
-  position: fixed;
-  font-size: 14px;
-  letter-spacing: 3px;
-  padding: 25px;
-  width: 100vw;
-  background: rgb(255 255 255 / 90%);
+
+.homeRow {
+  margin: 0;
+  color:black;
+}
+
+#descripcion1 img {
+  border-radius: 50%;
+}
+#testimonios{
+  padding-top: 5rem;
+}
+
+#testimonios img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+/* Contact Section */
+#logoGrande {
+  width: 200px;
+  height: 200px;
+}
+.contenedorRedes {
+  font-size: 50px;
+  display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+}
+.social-icons {
+  color: black;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+
+}
+.fab {
+  margin-left: 15px;
 }
 .fab:hover {
-    color: blueviolet;
+  color: blueviolet;
 }
 
 @media (max-width: 768px){
-    .titlePortada h1{
-        text-align: center;
-        align-content: center;
-        margin-top:20px;
-        margin-bottom: 20px;
-    }
-    .titlePortada{
-        text-align: left;
-        align-content: center;
+  .titlePortada h1{
+      text-align: center;
+      align-content: center;
+      margin-top:20px;
+      margin-bottom: 20px;
+  }
+  .titlePortada{
+      text-align: left;
+      align-content: center;
 
-    }
-    .panicButton{
-        margin-bottom: 20px;
-    }
-    #descripcion1{
-        text-align: center;
-        align-content: center;
-        padding-right: 0;
-    }
+  }
+  .panicButton{
+      margin-bottom: 20px;
+  }
+  #descripcion1{
+      text-align: center;
+      align-content: center;
+      padding-right: 0;
+  }
 }
 
 canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: auto;
-    cursor: pointer;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  cursor: pointer;
+}
 
 
-  .titledraw {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    user-select: none;
-    pointer-events: none;
-  }
-
+.titledraw {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  pointer-events: none;
+}
