@@ -94,7 +94,6 @@ background: linear-gradient(to top, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Fir
 
 
 #descripcion img {
-  border-radius: 50%;
   animation: moverIzquierda 1s ease-in;
 }
 #descripcion h1 {

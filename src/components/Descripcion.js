@@ -1,5 +1,5 @@
 import React from "react";
-import joyride from "../img/joyride.svg"
+import joyridecolor from "../img/joyridecolor.svg"
 
 const Descripcion = () => {
   return (
@@ -8,7 +8,7 @@ const Descripcion = () => {
       <div className="container">
         <div className="row py-5">
           <div className="col-md-6 col-12 d-flex justify-content-center">
-            <img src={joyride} className="d-flex" alt="" />
+            <img src={joyridecolor} className="d-flex" alt="" />
           </div>
           <div className="col-md-6 col-12 justify-content-center">
             <h1 className="fw-bold mb-5">¿Por qué creamos Serenity?</h1>
