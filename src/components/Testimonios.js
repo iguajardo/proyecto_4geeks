@@ -2,11 +2,9 @@ import React from "react";
 
 const Testimonios = () => {
     return (
-        <section className="flex-container" id="testimonios">
-
+        <section id="testimonios">
             
-
-<div className="item2">
+                <div className="container text-center">
                     <div className="row">
                         <h1 className="titulo fw-bold">Testimonios</h1>
                         <h5 className="subtitulo mb-5">
@@ -44,9 +42,8 @@ const Testimonios = () => {
                             </p>
                         </div>
                     </div>
-                    </div>
-           
-
+                </div>
+            
         </section>
     )
 }

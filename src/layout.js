@@ -12,6 +12,8 @@ import { PrivateRoute } from './rutas/PrivateRoute';
 import { EjercicioRespiracion } from './views/ejercicioRespiracion';
 import { Grounding } from './views/grounding';
 import { PublicRoute } from './rutas/PublicRoute';
+import {Ejercicios} from './views/ejercicios';
+import {ColorCanvas} from './views/coloredScreen';
 
 
 const Layout = () => {
@@ -21,9 +23,11 @@ const Layout = () => {
             <Switch>
                 <PublicRoute exact path="/register" component={Register} />
                 <PublicRoute exact path="/login" component={Login} />
+                <Route exact path="/ejercicios" component={Ejercicios}/>
                 <Route exact path="/ejercicio-respiracion" component={EjercicioRespiracion} />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/grounding" component={Grounding} />
+                <Route exact path="/sketchPage" component={ColorCanvas}/>
                 <PrivateRoute path="/perfil" component={Perfil} />
                 <Route component={NotFound} />
             </Switch>

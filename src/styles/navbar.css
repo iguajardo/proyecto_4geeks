@@ -6,5 +6,27 @@
     width: 30px;
     height: 30px;
     margin-right: 10px;
+
+}
+
+.username-nav{
+    display: inline-flex;
+    align-items: center;
+}
+
+@media (max-width: 575.98px){
+    .left-side{
+        display:flex
+    }
+    
+    
+}
+
+.nav-principal{
+    border-bottom: 2px solid #65CBF8;
+}
+
+.navegacion{
+    text-align: start;
 }
 

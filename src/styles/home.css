@@ -1,29 +1,34 @@
-* {
-  border: 1px dashed red;
-  min-height: 10px;
-}
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  color: #342aa3;
-  justify-content: space-around;
-}
-.section {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+#root{
+    width: 100vw;
+   
 }
 
-.item {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+body{
+    padding-bottom: 30px;
+    height: 100vh;
+    
 }
-.item2 {
-    min-height: 50vh;
+
+.secNav {
+    color: white;
+    z-index: 10;
+    position: fixed;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding: 25px;
+    width: 100vw;
+    background: rgb(255 255 255 / 90%);
+    justify-content: center;
+}
+
+@media (max-width: 768px) { 
+    .secNav{
+        display:none;
+    }
+}
+
+section{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,3 +81,49 @@
   background: rgb(255 255 255 / 90%);
   justify-content: center;
 }
+.fab:hover {
+    color: blueviolet;
+}
+
+@media (max-width: 768px){
+    .titlePortada h1{
+        text-align: center;
+        align-content: center;
+        margin-top:20px;
+        margin-bottom: 20px;
+    }
+    .titlePortada{
+        text-align: left;
+        align-content: center;
+
+    }
+    .panicButton{
+        margin-bottom: 20px;
+    }
+    #descripcion1{
+        text-align: center;
+        align-content: center;
+        padding-right: 0;
+    }
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    cursor: pointer;
+  }
+
+
+  .titledraw {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    pointer-events: none;
+  }
+

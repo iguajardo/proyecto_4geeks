@@ -1,5 +1,5 @@
 {
-  "name": "proyecto_4geeks",
+  "name": "proyecto_serenity",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "bootstrap": "^5.1.1",
     "react": "^17.0.2",
     "react-day-picker": "^7.4.10",
+    "react-device-detect": "^2.1.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.3.0",
