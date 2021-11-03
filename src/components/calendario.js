@@ -52,7 +52,7 @@ const Calendario = () => {
                     ...cellStyle
                 }}
                 onClick={changeActive}
-            ></div>
+            >{day.getDate()}</div>
         );
     }
 
