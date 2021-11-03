@@ -58,7 +58,8 @@ export const ColorCanvas = () => {
             <canvas id="canvas" onMouseDown={onMouseDown}></canvas>
             <div className="titledraw">
                 <h2>Aleja tus temores Pintando</h2>
-                <p> Usa este lienzo para pintar y relajarte!! </p> 
+                <p> ¡¡Usa este lienzo para pintar y relajarte!! </p> 
+                <button className="btn-9 custom-btn" onClick={()=>{ctx.clearRect(0, 0, canvasElem.width, canvasElem.height);}}>Borrar</button>
             </div>    
                 
         </>

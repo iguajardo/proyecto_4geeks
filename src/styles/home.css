@@ -6,6 +6,11 @@ body{
   padding-bottom: 30px;
   height: 100vh;
 
+  overflow-x: hidden;
+  
+}
+
+
 }
 
 
@@ -159,6 +164,13 @@ background: linear-gradient(to top, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Fir
   color: black;
 }
 
+.contenidoTestimonios {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 @media (max-width: 768px){
   
   .textoPortada {
@@ -186,6 +198,7 @@ canvas {
   width: 100vw;
   height: auto;
   cursor: pointer;
+  
 }
 
 .titledraw {
@@ -196,6 +209,7 @@ canvas {
   transform: translate(-50%, -50%);
   user-select: none;
   pointer-events: none;
+
 }
 @keyframes moverIzquierda{
   0%{
@@ -226,4 +240,13 @@ canvas {
       opacity: 1;
       transform: translate(0);
   }
+
+  
+}
+
+.titledraw button{
+  position: relative;
+  z-index: 999999;
+  pointer-events: initial;
+
 }

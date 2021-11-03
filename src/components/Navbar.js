@@ -14,6 +14,7 @@ const Navbar = () => {
     return (
         <>
             <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light nav-principal">
+                
                 <div className="container-fluid">
                     <img className="logo" src={logo} />
                     <Link className="navbar-brand" to="/">
@@ -102,6 +103,7 @@ const Navbar = () => {
 
                         }
                     </div>
+                
                 </div>
             </nav>
         </>

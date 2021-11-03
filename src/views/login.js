@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useContext, useRef } from "react";
 import { Context } from "../store/appContext";
 
@@ -32,6 +32,8 @@ const Login = () => {
                 inputUsername.current.value = ""
                 inputPassword.current.value = ""
                 history.replace(lastPath);
+                console.log(inputUsername)
+                console.log()
             }
         } catch (error) {
             console.error(error);
@@ -65,19 +67,19 @@ const Login = () => {
                                     className="form-control"
                                     id="password"
                                     name="password"
-
                                 />
                             </div>
                             <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <button className="btn btn-primary fw-bold mt-3" type="submit">
+                                <button className="btn btn-9 custom-btn fw-bold mt-3 p-1" type="submit">
                                     Iniciar Sesión
                                 </button>
                             </div>
+                            <Link to="/form-reset-password">¿Olvidaste tu contraseña?</Link>
                         </form>
                     </div>
                 </div>
             </div>
-            
+
         </>
     )
 }

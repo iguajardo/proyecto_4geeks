@@ -3,6 +3,7 @@ import React from "react";
 import logo from '../img/logo.png'
 
 const Redessociales = () => {
+
   return (
     <section id="redesSociales">
       <div className="container">
@@ -21,9 +22,9 @@ const Redessociales = () => {
               <i className="fab fa-instagram"></i>
               <i className="fab fa-twitter"></i>
               </div>
+
             </div>
           
-
         </div>
       </div>
     </section>
