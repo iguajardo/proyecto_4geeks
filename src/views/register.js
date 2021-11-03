@@ -31,10 +31,10 @@ const Register = () => {
         e.preventDefault();
         let mensaje = ""
         if (!validateUsername(input.nombre_usuario)) {
-            mensaje += "El usuario no debe contener caracteres especiales"
+            mensaje += "El usuario no debe contener caracteres especiales."
         }
         if (!validatePassword(input.password)) {
-            mensaje += "\nEl password debe contener 8 caracteres, incluir mayusc,minusc,numeros y caracteres especiales"
+            mensaje += "\nEl password debe contener 8 caracteres, incluir al menos: mayúsculas, minúsculas, números y caracteres especiales."
         }
         if (mensaje.length > 0) {
             setIsRegister({ "message": mensaje, "status": "error" })
@@ -69,7 +69,7 @@ const Register = () => {
             ...input,
             [target.name]: target.value
         })
-        //setIsRegister({ "message": "", "status": "" })
+        // setIsRegister({ "message": "", "status": "" })
     }
 
     const validatePassword = (password) => {
@@ -84,7 +84,7 @@ const Register = () => {
 
     return (
         <>
-            <div className="container d-flex py-5 justify-content-center">
+            <div className="container d-flex py-5 justify-content-center col-4">
                 <div className="card ">
                     <div className="card-header">
                         <h3 className="text-center">Bienvenido a Serenity</h3>
@@ -96,8 +96,8 @@ const Register = () => {
                                     Usuario creado correctamente!
                                 </div>
                                 : isRegister.status === "error" &&
-                                <div className="alert alert-danger" role="alert">
-                                    Usuario/correo ya existe!
+                                <div className="alert alert-danger wrap-text" role="alert">
+                                    {isRegister.message.split("\n").map((text) => <p>{text}</p>)}
                                 </div>
                             }
                             <div className="col-md-12">
