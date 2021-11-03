@@ -10,10 +10,6 @@ body{
   
 }
 
-
-}
-
-
 section{
   
   min-height: 100vh;
@@ -240,8 +236,6 @@ canvas {
       opacity: 1;
       transform: translate(0);
   }
-
-  
 }
 
 .titledraw button{
