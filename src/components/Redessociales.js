@@ -7,7 +7,7 @@ const Redessociales = () => {
         <section id="redessociales">
             <div className="container">
                 <div className="row">
-                    <div className="contenedorRedes">
+                    <div className="col-12 contenedorRedes">
                         <img id="logoGrande" src={logo} />
                         <h3 className="mt-3"> « Un respiro a la vez » </h3>
                         <div className="social-icons mt-3">
