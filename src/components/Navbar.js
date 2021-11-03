@@ -40,13 +40,13 @@ const Navbar = () => {
                                             <a className="navegacion ms-2 nav-link" href="#portada">Inicio</a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="navegacion ms-2 nav-link" href="#descripcion1">Descripción</a>
+                                            <a className="navegacion ms-2 nav-link" href="#descripcion">Descripción</a>
                                         </li>
                                         <li className="nav-item">
                                             <a className="navegacion ms-2 nav-link" href="#testimonios">Testimonios</a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="navegacion ms-2 nav-link" href="#redessociales">Contacto</a>
+                                            <a className="navegacion ms-2 nav-link" href="#redesSociales">Contacto</a>
                                         </li>
                                     </>
                                 ) : (

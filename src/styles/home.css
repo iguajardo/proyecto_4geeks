@@ -5,42 +5,58 @@
 body{
   padding-bottom: 30px;
   height: 100vh;
+
   overflow-x: hidden;
   
 }
 
-.secNav {
-  color: white;
-  z-index: 10;
-  position: fixed;
-  font-size: 14px;
-  letter-spacing: 3px;
-  padding: 25px;
-  width: 100vw;
-  background: rgb(255 255 255 / 90%);
-  justify-content: center;
+
 }
 
-@media (max-width: 768px) { 
-  .secNav{
-      display:none;
-  }
-}
 
 section{
+  
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-top: 5rem;
 }
 
-.titlePortada {
-  color: #3F3D56;
+#portada {
+  background: #d9a7c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: auto;
+  padding: 48px;
+  width: 100%;
+}
+.textoPortada {
+  padding-top: 40px;
+  color: rgb(68, 61, 61);
   font-size: 25px;
-  
-  /* position: absolute; posicionar por sobre el elemento que lo contiene relative 
-  transform: translateY(-50%); cambiando punto de referencia */
+  text-align: center;
+}
+.textoPortada .bienvenida{
+  font-size: 50px;
+  animation: moverDerecha 1s ease-in;
+}
+.textoPortada .subtitulo{
+  font-size: 23px;
+  font-weight: bold;
+  animation: moverIzquierda 1s ease-in;
+}
+.textoPortada .parrafo{
+  font-size: 20px;
+  font-weight: bold;
+  animation: moverDerecha 1s ease-in;
+}
+.textoPortada .btn_perfil{
+  animation: moverArriba 1s ease-in;
+}
+.arbol{
+  animation: moverArriba 1s ease-in;
 }
 
 .panicButton {
@@ -69,49 +85,83 @@ section{
   top: 2px;
 }
 
-.homeRow {
-  margin: 0;
-  color:black;
+.wave{
+  height: 100px;
+  width: 100%;
+ 
+}
+#descripcion{
+  background: #d9a7c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
-#descripcion1 img {
-  border-radius: 50%;
+
+#descripcion img {
+  animation: moverIzquierda 1s ease-in;
 }
-#testimonios{
-  padding-top: 5rem;
+#descripcion h1 {
+  color: black;
+  animation: moverDerecha 1s ease-in;
+}
+#descripcion p {
+  text-align: justify;
+  color: black;
+  animation: moverArriba 1s ease-in;
+}
+
+
+#testimonios {
+  background: #d9a7c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: black;
 }
 
 #testimonios img {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 
 /* Contact Section */
-#logoGrande {
-  width: 200px;
-  height: 200px;
+#redesSociales{
+  background: #d9a7c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+
+  padding-top: 40px;
 }
-.contenedorRedes {
-  font-size: 50px;
+.serenity{
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  color: black;
+ 
+}
+.rrss{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#logoGrande {
+  width: 250px;
+  height: 250px;
 }
 .social-icons {
   color: black;
   font-size: 50px;
   display: flex;
   justify-content: center;
-
 }
 .fab {
   margin-left: 15px;
 }
 .fab:hover {
-  color: blueviolet;
+  color: black;
 }
 
 .contenidoTestimonios {
@@ -122,21 +172,19 @@ section{
 
 
 @media (max-width: 768px){
-  .titlePortada h1{
+  
+  .textoPortada {
+    
       text-align: center;
       align-content: center;
-      margin-top:20px;
+      margin-top: 20px;
       margin-bottom: 20px;
   }
-  .titlePortada{
-      text-align: left;
-      align-content: center;
 
-  }
   .panicButton{
       margin-bottom: 20px;
   }
-  #descripcion1{
+  #descripcion{
       text-align: center;
       align-content: center;
       padding-right: 0;
@@ -161,6 +209,38 @@ canvas {
   transform: translate(-50%, -50%);
   user-select: none;
   pointer-events: none;
+
+}
+@keyframes moverIzquierda{
+  0%{
+      opacity: 0;
+      transform: translateX(-100px);
+  }
+  100%{
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+@keyframes moverDerecha{
+  0%{
+      opacity: 0;
+      transform: translateX(100px);
+  }
+  100%{
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+@keyframes moverArriba{
+  0%{
+      opacity: 0;
+      transform: translateY(100px);
+  }
+  100%{
+      opacity: 1;
+      transform: translate(0);
+  }
+
   
 }
 
@@ -168,4 +248,5 @@ canvas {
   position: relative;
   z-index: 999999;
   pointer-events: initial;
+
 }
