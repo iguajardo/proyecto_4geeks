@@ -24,7 +24,7 @@ const Notas = () => {
                             data-bs-target="#exampleModal"
                         >
                             {" "}
-                            <i className="icon-note m-1" />
+                            
                             <span className="d-none d-md-block font-14">Crear nota</span>
                         </button>
                     </li>
