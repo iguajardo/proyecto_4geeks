@@ -7,7 +7,7 @@ export const PublicRoute = ({ component: Component, ...rest }) => {
 
     return (
         <Route {...rest} component={
-            props => (localStorage.getItem('userToken') === null ? <Component {...props} /> : <Redirect to="/" />)
+            (props) => (localStorage.getItem('userToken') === null ? <Component {...props} /> : <Redirect to="/" />)
         }
         />
     )
